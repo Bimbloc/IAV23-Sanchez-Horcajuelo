@@ -750,7 +750,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 2100378030}
   m_Father: {fileID: 987010697}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1122,7 +1123,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7440f2b4fbec224c83b9afeb412f695, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Goals: []
+  Goals:
+  - KeyReference: {fileID: 0}
+    Concatenator: {fileID: 0}
+    StateType: 1
+    Value: 0
+    StringValue: Nomorirdehambre
+    Operator: 0
+    Priority: 4
+    Once: 0
+    TotalCost: 0
   PlannerSettings:
     RunOnLateUpdate: 1
     CanAbortPlans: 0
@@ -1947,6 +1957,104 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2100378029
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2100378030}
+  - component: {fileID: 2100378031}
+  m_Layer: 0
+  m_Name: Buscacomida
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2100378030
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2100378029}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 531770054}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2100378031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2100378029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0db047e78cb6b94448436a7cd75c6900, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Buscacomida
+  Cost: 1
+  CostEvaluator: {fileID: 0}
+  UsableEvaluator: {fileID: 0}
+  AbortEvaluator: {fileID: 0}
+  PreConditions:
+  - KeyReference: {fileID: 0}
+    Concatenator: {fileID: 0}
+    StateType: 1
+    Value: 0
+    StringValue: Nomorirdehambre
+    Operator: 4
+  AfterEffects:
+  - KeyReference: {fileID: 0}
+    Concatenator: {fileID: 0}
+    StateType: 1
+    Value: 0
+    StringValue: Nomorirdehambre
+    Operator: 0
+  - KeyReference: {fileID: 0}
+    Concatenator: {fileID: 0}
+    StateType: 0
+    Value: 0
+    StringValue: 
+    Operator: 0
+  CostEvaluationType: 0
+  AchievableEvaluationType: 0
+  AbortEvaluatorType: 0
+  CoroutineData:
+    MinimumRuntime: 0.5
+    CooldownRangeValue:
+      Min: 0
+      Max: 0
+      Value: 0
+    StaggerRangeValue:
+      Min: 0
+      Max: 0
+      Value: 0
+    UseMaxRuntime: 0
+    MaxRuntimeRangeValue:
+      Min: 2
+      Max: 5
+      Value: 0
+    StopOnFailed: 1
+    RunCooldownOnFailed: 1
+  MinimumRuntime: 0.5
+  CooldownRangeValue:
+    Min: 0
+    Max: 0
+    Value: 0
+  StaggerRangeValue:
+    Min: 0
+    Max: 0
+    Value: 0
 --- !u!1 &2102887897
 GameObject:
   m_ObjectHideFlags: 0
