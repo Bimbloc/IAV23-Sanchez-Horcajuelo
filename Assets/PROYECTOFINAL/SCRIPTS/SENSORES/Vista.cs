@@ -1,13 +1,10 @@
-using SGOAP.Examples;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DinosaurRunrimeInfo : AgentGoalSystem
+public class Vista : MonoBehaviour
 {
     // Start is called before the first frame update
-    //Toda la informacion del estado del dinosaurio si tiene hambe sed si está cazando , huyendo...
-    
     void Start()
     {
         
