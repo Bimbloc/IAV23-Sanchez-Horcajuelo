@@ -57,7 +57,10 @@ namespace SGOAP.Examples
             else
             {
                 if (SeenObjects.Count > 0)
+                {
                     RuntimeData.SetActionTarget(SeenObjects[0]);
+                    Debug.Log(SeenObjects[0]);
+                }
             }
         }
 
