@@ -2006,25 +2006,13 @@ MonoBehaviour:
   CostEvaluator: {fileID: 0}
   UsableEvaluator: {fileID: 0}
   AbortEvaluator: {fileID: 0}
-  PreConditions:
-  - KeyReference: {fileID: 0}
-    Concatenator: {fileID: 0}
-    StateType: 1
-    Value: 0
-    StringValue: Nomorirdehambre
-    Operator: 4
+  PreConditions: []
   AfterEffects:
   - KeyReference: {fileID: 0}
     Concatenator: {fileID: 0}
     StateType: 1
     Value: 0
     StringValue: Nomorirdehambre
-    Operator: 0
-  - KeyReference: {fileID: 0}
-    Concatenator: {fileID: 0}
-    StateType: 0
-    Value: 0
-    StringValue: 
     Operator: 0
   CostEvaluationType: 0
   AchievableEvaluationType: 0
