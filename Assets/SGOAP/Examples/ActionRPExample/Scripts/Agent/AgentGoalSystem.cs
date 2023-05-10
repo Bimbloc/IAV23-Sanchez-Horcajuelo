@@ -11,9 +11,8 @@ namespace SGOAP.Examples
         public AgentRuntimeActionData AgentRuntimeData;
         public AgentPickUpSystem PickUpSystem;
 
-        public float KillPlayerHPThreshold = 30;
-
-        private void Update()
+       float KillPlayerHPThreshold = 30;
+        public  void Update()
         {
             UpdateGoalPriorities();
         }
@@ -22,7 +21,7 @@ namespace SGOAP.Examples
         /// <summary>
         /// Decide the priority of the goal. This drive the agent to pick up points or health.
         /// </summary>
-        public void UpdateGoalPriorities()
+        public virtual void UpdateGoalPriorities()
         {
             // Not performant you'll need to cache these.
             // Hard coded string for this example but you can use const string or states references.

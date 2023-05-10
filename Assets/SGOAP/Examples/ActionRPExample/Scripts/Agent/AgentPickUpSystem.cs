@@ -17,7 +17,7 @@ namespace SGOAP.Examples
         private void Awake()
         {
             // Highly reccomend having a management system for item objects.
-            FoundItems = FindObjectsOfType<ItemObject>().ToList();
+            FoundItems = FindObjectsOfType<ItemObject>().ToList();// mas  gente usando findo no puede ser
         }
         public ItemObject GetMostWantedItem(EItemTrait trait)
         {
