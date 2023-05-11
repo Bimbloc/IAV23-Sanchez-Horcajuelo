@@ -39,18 +39,37 @@ El comportamiendo que se espera obtener es aquel que asegure en la medida de lo 
  Y los intentarán cumplir a través de las siguientes acciones : 
  
  Dormir : el dinosaurio se detiene y recupera energía . Precondicion : no tiene , Post Condicion : No morir de cansancio
+ 
  Buscar comida: el dinosaurio se mueve en direccines aleatorias hasta que encuentra comida. Precondicion : no tiene , Post condicion : tengo comida
+ 
  Comer: el dinosaurio usa la comid para saciar su hambre . Precondición : tengo comida , Post Condición : No morir de hambre 
+ 
  buscar presa : el dinosaurio se mueve en direcciones aleatorias hasta qeu divisa una presa . Precondicion : no tiene , Post condicion : tengo presa
+ 
  Cazar : el dinosaurio ha encontrado una presa asi que la persigue.Preccondicion : tengo presa , Post condicion : tengo comida.
+ 
  Huir : el dinosaurio divisa una amenaza asi que huye . Precondicion : no tiene , Post condicion : No morir devorado.
  
  La prioridad de estos objetivos depende de diversas metricas , cuanto cansancion hayan acumulado cuanta hambre tengan o como de cerca se encuentra la amenaza.
  
  # Pruebas y Métricas
  
+ Para demostrar el correcto funcionamiento de la inteligencia artificial de los agentes se llevarán a cabo las siguientes pruebas.
+ Prueba A : Al iniciar el juego los dinosaurios tienen todos los requisitos de supervivencia al máximo pero a medida que se mueven se cansan y a medida que pasa el tiempo tienen más hambre.Nos centraremos en los herbivoros y observaremos como merodean hasta encontrar una planta que poder comer.
+ Prueba B : Después de dejar la simulación  trabajando un rato los dinosaurios carnivoros tendrán hambre asi que intentarán cazar a los herviboros.
+ Prueba C : En esta simulación habrá poca comida y veremos como aquellos agentes que no logren obtenerla se desvanecerán
+ Prueba D : La simulación avanza y agentes empiezan a estar cansados , los dinosaurios herbivoros que estén lejos de una amenaza podrán dormir pero 
+ aquellos que estén derca de carnivoros hambrientos deberán huir hasta dejarlos atrás o desvanecerse por el agoamiento.
  
+ # Producción 
  
+ Las tareas se han realizado y el esfuerzo ha sido repartido entre los autores.
+
+| Estado | Tarea                                        | Fecha | Persona Asignada |
+| :----: | :------------------------------------------- | :---: | :--------------- |
+|   ✔    |  Documentación y diagramas | 11-05 | Rocío            |
+|   ✔    | Prototipar para elegir plug-ins  | 10-05 | Rocío            |
+
  
  
 
