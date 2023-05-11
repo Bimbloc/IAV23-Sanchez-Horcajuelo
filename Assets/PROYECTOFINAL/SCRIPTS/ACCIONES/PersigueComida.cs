@@ -1,10 +1,13 @@
 using SGoap;
+using SGOAP.Examples;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PersigueComida : CoroutineAction
+public class PersigueComida : MoveToAction
 {
+    public DinosaurRunrimeInfo runtimedinfo; 
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -16,9 +19,30 @@ public class PersigueComida : CoroutineAction
     {
         
     }
+    public override Transform GetDestination()
+    {
+        return runtimedinfo.GetTarget().transform;
+    }
     public override IEnumerator PerformRoutine()
     {
+        MoveSystem.SetMoveData(MoveData);
+        MoveSystem.SetDestination(Destination.position);
+        Log($"Set Destination: {Destination.position}");
 
+        while (!MoveSystem.ReachedDestination())
+        {
+            if (Destination == null)
+                break;
+
+            MoveSystem.SetDestination(Destination.position);
+            yield return null;
+        }
+
+        MoveSystem.Stop();
+
+        Log("Executing");
+        yield return Execute();
+        Log("Executed");
         Debug.Log("PERSIGO");
         yield break;
     }

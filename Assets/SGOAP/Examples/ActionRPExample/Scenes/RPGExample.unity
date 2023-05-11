@@ -1057,7 +1057,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1079322133}
   m_Father: {fileID: 987010697}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1092,7 +1093,6 @@ GameObject:
   - component: {fileID: 987010693}
   - component: {fileID: 987010692}
   - component: {fileID: 987010699}
-  - component: {fileID: 987010698}
   - component: {fileID: 987010700}
   - component: {fileID: 987010701}
   - component: {fileID: 987010702}
@@ -1222,25 +1222,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &987010698
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 987010691}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 998861b554f82cf41ba91b8e76511a81, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AgentCharacter: {fileID: 987010701}
-  TargetCharacter: {fileID: 0}
-  Agent: {fileID: 987010699}
-  Animator: {fileID: 0}
-  ActionTargetStateName: hasActionTarget
-  ActionTarget: {fileID: 0}
-  PickupTarget: {fileID: 0}
 --- !u!114 &987010699
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1284,7 +1265,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e07662d5177d7b64cbfbd562daf0218b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AgentRuntimeData: {fileID: 987010698}
+  AgentRuntimeData: {fileID: 0}
   PickUpSystem: {fileID: 0}
 --- !u!114 &987010701
 MonoBehaviour:
@@ -1357,6 +1338,56 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5536a181d9d57734783516e557eaef42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1079322132
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1079322133}
+  - component: {fileID: 1079322134}
+  m_Layer: 0
+  m_Name: movesistem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1079322133
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1079322132}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 936709460}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1079322134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1079322132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c4b178690b1adc4bb99e7ce40bb078d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Data:
+    MoveSpeed: 5
+    TurnSpeed: 30
+    StopDistance: 1
+  NavAgent: {fileID: 987010693}
+  ReachedDestinationBuffer: 0.5
 --- !u!1 &1192061596
 GameObject:
   m_ObjectHideFlags: 0
@@ -1840,6 +1871,14 @@ MonoBehaviour:
     Min: 0
     Max: 0
     Value: 0
+  MoveData:
+    MoveSpeed: 5
+    TurnSpeed: 30
+    StopDistance: 1
+  MoveSystem: {fileID: 1079322134}
+  EnableLog: 0
+  RuntimeData: {fileID: 987010702}
+  runtimedinfo: {fileID: 987010702}
 --- !u!1 &1836128013
 GameObject:
   m_ObjectHideFlags: 0
@@ -2317,33 +2356,14 @@ MonoBehaviour:
   CostEvaluationType: 0
   AchievableEvaluationType: 0
   AbortEvaluatorType: 0
-  CoroutineData:
-    MinimumRuntime: 0.5
-    CooldownRangeValue:
-      Min: 0
-      Max: 0
-      Value: 0
-    StaggerRangeValue:
-      Min: 0
-      Max: 0
-      Value: 0
-    UseMaxRuntime: 0
-    MaxRuntimeRangeValue:
-      Min: 2
-      Max: 5
-      Value: 0
-    StopOnFailed: 1
-    RunCooldownOnFailed: 1
-  MinimumRuntime: 0.5
-  CooldownRangeValue:
-    Min: 0
-    Max: 0
-    Value: 0
-  StaggerRangeValue:
-    Min: 0
-    Max: 0
-    Value: 0
   runrimeInfo: {fileID: 987010702}
+  RuntimeData: {fileID: 0}
+  MoveData:
+    MoveSpeed: 5
+    TurnSpeed: 30
+    StopDistance: 1
+  MoveSystem: {fileID: 1079322134}
+  Range: 5
 --- !u!1 &2102887897
 GameObject:
   m_ObjectHideFlags: 0

@@ -38,7 +38,7 @@ namespace SGoap
 
         public EActionStatus Status { get; set; }
 
-        private Coroutine _coroutine;
+        protected Coroutine _coroutine;
 
         #region Deprecated
         [Obsolete] [HideInInspector] public float MinimumRuntime = 0.5f;
