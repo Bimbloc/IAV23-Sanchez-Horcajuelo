@@ -5,6 +5,7 @@ using UnityEngine;
 public class Vista : MonoBehaviour
 {
     // Start is called before the first frame update
+    public DinosaurRunrimeInfo runrimeInfo;
     void Start()
     {
         
@@ -14,5 +15,16 @@ public class Vista : MonoBehaviour
     void Update()
     {
         
+    }
+    void FixedUpdate()
+    { 
+
+        //el raycast no me da el objeto con el qeu choco :/
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.GetComponent<Comida>())
+        runrimeInfo.SetTarget(other.gameObject);
+
     }
 }

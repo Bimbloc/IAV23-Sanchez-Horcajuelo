@@ -18,7 +18,7 @@ namespace SGOAP.Examples
         public Transform ActionTarget;
         public ItemObject PickupTarget;
 
-        private void Update()
+        public virtual void Update()
         {
             if(ActionTarget == null)
                 Agent.States.RemoveState(ActionTargetStateName);
@@ -27,7 +27,7 @@ namespace SGOAP.Examples
             
         }
 
-        public void SetActionTarget(Transform transform)
+        public virtual void SetActionTarget(Transform transform)
         {
             ActionTarget = transform;
 

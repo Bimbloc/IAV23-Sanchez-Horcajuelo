@@ -11,9 +11,9 @@ public class DinosaurGoalSystem : AgentGoalSystem
         
     }
 
-    // Update is called once per frame
+    // Update is called once per frame en el padre y llama a  updatear  prioridades
     public override void  UpdateGoalPriorities()
     {
-        Debug.Log("rawr");
+      //  Debug.Log("rawr");
     }
 }

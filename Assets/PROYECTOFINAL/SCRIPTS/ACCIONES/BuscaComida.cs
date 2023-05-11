@@ -6,6 +6,8 @@ using UnityEngine;
 public class BuscaComida : CoroutineAction
 {
     // Start is called before the first frame update
+    float cooldown = 0.3f;
+   public  DinosaurRunrimeInfo runrimeInfo;
     void Start()
     {
         
@@ -18,7 +20,14 @@ public class BuscaComida : CoroutineAction
     }
     public override IEnumerator PerformRoutine()
     {
-        Debug.Log("estoybuscandocomida");
-        yield return null;
+        
+        //mientras no la encuntre sigo 
+        while (runrimeInfo.GetTarget()==null)
+        {
+            Debug.Log("estoybuscandocomida" + runrimeInfo.GetTarget());
+            yield return null;
+        }
+        Debug.Log("encontrada");
+        yield  break;
     }
     }
