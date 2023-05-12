@@ -9,7 +9,7 @@ namespace SGoap
         public bool RunOnLateUpdate = true;
 
         // Deprecated.
-        [HideInInspector] public bool CanAbortPlans;
+        public bool CanAbortPlans;
         [HideInInspector] public float PlanRate = 1;
 
         public bool GenerateGoalReport;

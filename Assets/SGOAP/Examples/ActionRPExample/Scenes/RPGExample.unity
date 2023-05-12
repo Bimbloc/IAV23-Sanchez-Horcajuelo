@@ -1386,7 +1386,7 @@ MonoBehaviour:
     TotalCost: 0
   PlannerSettings:
     RunOnLateUpdate: 1
-    CanAbortPlans: 0
+    CanAbortPlans: 1
     PlanRate: 1
     GenerateGoalReport: 0
     GenerateFailedPlansReport: 0

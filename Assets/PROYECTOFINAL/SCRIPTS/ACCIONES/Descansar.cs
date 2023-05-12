@@ -8,6 +8,9 @@ public class Descansar :BasicAction
 {
     public DinosaurRunrimeInfo runtimedinfo;
     public MoveSystem movsys;
+    //descansar va  a tener mazo cooldown por que si no está to el rato a base de micro siestas
+    public float cooldown = 4f;
+    public override float StaggerTime => cooldown;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,10 +32,12 @@ public class Descansar :BasicAction
     public override EActionStatus Perform()
     {
         //llegados a este punto el target solo puede ser comida 
-
+        runtimedinfo.gameObject.GetComponent<Rigidbody>().isKinematic = true;
         movsys.Stop();
         Debug.Log("zzz");
         runtimedinfo.sueño--;
+     
+        runtimedinfo.gameObject.GetComponent<Rigidbody>().isKinematic = false;
         return EActionStatus.Success;
     }
 

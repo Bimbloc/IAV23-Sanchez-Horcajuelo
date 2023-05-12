@@ -10,10 +10,13 @@ public class DinosaurRunrimeInfo : AgentRuntimeActionData
     GameObject objetivo = null; //El sensor de vista aportará valor a esta variable
    public  int hambre = 0;
    public  int sueño = 0;
-    int habrecooldown=4;
-    int sueñocooldown=4; 
+    int habrecooldown=4;// cuanto timepo aumenta el hambre
+    int sueñocooldown=8; // cada cuanto tiempo aumenta el sueño
+
+    Vector3 prevposs;// el sueño depende de cuanto nos movamos , cuanto mas nos movemos mas nos cansamos
     void Start()
     {
+        prevposs = transform.position;
         InvokeRepeating("GanarHambre", habrecooldown, habrecooldown);
         InvokeRepeating("GanarSueño", sueñocooldown, sueñocooldown);
     }
@@ -35,6 +38,8 @@ public class DinosaurRunrimeInfo : AgentRuntimeActionData
     void GanarSueño()
     {
 
-        sueño++;
+        Vector3 desp =new Vector3( Mathf.Abs( transform.position.x - prevposs.x), Mathf.Abs(transform.position.y - prevposs.y), Mathf.Abs(transform.position.z - prevposs.z));
+        sueño+=( int ) desp.magnitude;
+        prevposs = transform.position;
     }
 }
