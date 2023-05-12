@@ -1,10 +1,12 @@
 using SGOAP.Examples;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class DinosaurGoalSystem : AgentGoalSystem
 {
+    public DinosaurRunrimeInfo runtimedinfo;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,6 +16,12 @@ public class DinosaurGoalSystem : AgentGoalSystem
     // Update is called once per frame en el padre y llama a  updatear  prioridades
     public override void  UpdateGoalPriorities()
     {
-      //  Debug.Log("rawr");
+        //  Debug.Log("rawr");
+        var hambreGoal = AgentRuntimeData.Agent.Goals.FirstOrDefault(x => x.Key == "Nomorirdehambre");
+        var sueñoGoal = AgentRuntimeData.Agent.Goals.FirstOrDefault(x => x.Key == "Nomorirdeagotamiento");
+        hambreGoal.Priority = runtimedinfo.hambre;
+        sueñoGoal.Priority = runtimedinfo.sueño;
+        AgentRuntimeData.Agent.UpdateGoalOrderCache();
+
     }
 }

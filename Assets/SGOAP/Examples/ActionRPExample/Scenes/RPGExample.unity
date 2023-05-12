@@ -123,6 +123,68 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 23800000, guid: cc4eaac1ba74a134cb3042ebf1efeda8, type: 2}
+--- !u!1 &72815678
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 72815679}
+  - component: {fileID: 72815680}
+  m_Layer: 0
+  m_Name: Descansar
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &72815679
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 72815678}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 531770054}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &72815680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 72815678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddffdc196adfc3c4286b8339705d528f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Action
+  Cost: 1
+  CostEvaluator: {fileID: 0}
+  UsableEvaluator: {fileID: 0}
+  AbortEvaluator: {fileID: 0}
+  PreConditions: []
+  AfterEffects:
+  - KeyReference: {fileID: 0}
+    Concatenator: {fileID: 0}
+    StateType: 1
+    Value: 0
+    StringValue: Nomorirdeagotamiento
+    Operator: 0
+  CostEvaluationType: 0
+  AchievableEvaluationType: 0
+  AbortEvaluatorType: 0
+  runtimedinfo: {fileID: 987010702}
+  movsys: {fileID: 1079322134}
 --- !u!1 &89778107
 GameObject:
   m_ObjectHideFlags: 0
@@ -753,6 +815,8 @@ Transform:
   m_Children:
   - {fileID: 2100378030}
   - {fileID: 1585036298}
+  - {fileID: 625753161}
+  - {fileID: 72815679}
   m_Father: {fileID: 987010697}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -823,6 +887,73 @@ Transform:
   m_Father: {fileID: 987010697}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &625753160
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 625753161}
+  - component: {fileID: 625753162}
+  m_Layer: 0
+  m_Name: Comer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &625753161
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 625753160}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 531770054}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &625753162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 625753160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e4c8c1888a846249a699aa528b26cf6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Action
+  Cost: 1
+  CostEvaluator: {fileID: 0}
+  UsableEvaluator: {fileID: 0}
+  AbortEvaluator: {fileID: 0}
+  PreConditions:
+  - KeyReference: {fileID: 0}
+    Concatenator: {fileID: 0}
+    StateType: 1
+    Value: 0
+    StringValue: llegueacomida
+    Operator: 0
+  AfterEffects:
+  - KeyReference: {fileID: 0}
+    Concatenator: {fileID: 0}
+    StateType: 1
+    Value: 0
+    StringValue: Nomorirdehambre
+    Operator: 0
+  CostEvaluationType: 0
+  AchievableEvaluationType: 0
+  AbortEvaluatorType: 0
+  runtimedinfo: {fileID: 987010702}
 --- !u!1 &643877258
 GameObject:
   m_ObjectHideFlags: 0
@@ -1244,6 +1375,15 @@ MonoBehaviour:
     Priority: 4
     Once: 0
     TotalCost: 0
+  - KeyReference: {fileID: 0}
+    Concatenator: {fileID: 0}
+    StateType: 1
+    Value: 0
+    StringValue: Nomorirdeagotamiento
+    Operator: 0
+    Priority: 3
+    Once: 0
+    TotalCost: 0
   PlannerSettings:
     RunOnLateUpdate: 1
     CanAbortPlans: 0
@@ -1265,8 +1405,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e07662d5177d7b64cbfbd562daf0218b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AgentRuntimeData: {fileID: 0}
+  AgentRuntimeData: {fileID: 987010702}
   PickUpSystem: {fileID: 0}
+  runtimedinfo: {fileID: 987010702}
 --- !u!114 &987010701
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1300,6 +1441,8 @@ MonoBehaviour:
   ActionTargetStateName: hasActionTarget
   ActionTarget: {fileID: 0}
   PickupTarget: {fileID: 0}
+  hambre: 0
+  "sue\xF1o": 0
 --- !u!4 &1001759988 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4477008259714068799, guid: 2d646193feb78d04997ef417e6307f78, type: 3}
@@ -1840,7 +1983,7 @@ MonoBehaviour:
     Concatenator: {fileID: 0}
     StateType: 1
     Value: 0
-    StringValue: Nomorirdehambre
+    StringValue: llegueacomida
     Operator: 0
   CostEvaluationType: 0
   AchievableEvaluationType: 0
@@ -2228,14 +2371,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2050010520}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0.7260038, z: -0, w: 0.6876907}
+  m_LocalPosition: {x: -0.21, y: 0, z: 0.26}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 611212821}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -93.105, z: 0}
 --- !u!65 &2050010522
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2356,6 +2499,7 @@ MonoBehaviour:
   CostEvaluationType: 0
   AchievableEvaluationType: 0
   AbortEvaluatorType: 0
+  cooldown: 0.3
   runrimeInfo: {fileID: 987010702}
   RuntimeData: {fileID: 0}
   MoveData:
@@ -2363,7 +2507,7 @@ MonoBehaviour:
     TurnSpeed: 30
     StopDistance: 1
   MoveSystem: {fileID: 1079322134}
-  Range: 5
+  Range: 8
 --- !u!1 &2102887897
 GameObject:
   m_ObjectHideFlags: 0

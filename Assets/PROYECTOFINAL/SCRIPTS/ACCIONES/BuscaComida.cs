@@ -7,18 +7,19 @@ using UnityEngine;
 public class BuscaComida : BasicAction
 {
     // Start is called before the first frame update
-    float cooldown = 0.3f;
-   public  DinosaurRunrimeInfo runrimeInfo;
+    public float cooldown = 0.3f;
+ 
+    public  DinosaurRunrimeInfo runrimeInfo;
     public AgentRuntimeActionData RuntimeData;
     public MoveData MoveData;
     public MoveSystem MoveSystem;
     public float Range = 5;
-
+    public override float StaggerTime => cooldown;
     private Vector3 _startPosition;
     private Vector3 _destination;
     void Start()
     {
-        
+       
     }
 
     // Update is called once per frame
@@ -33,7 +34,7 @@ public class BuscaComida : BasicAction
         _destination = GetSeekPosition();
         if (runrimeInfo.GetTarget() == null)
         {
-            Debug.Log("estoybuscandocomida" + runrimeInfo.GetTarget());
+            //Debug.Log("estoybuscandocomida" + runrimeInfo.GetTarget());
             MoveSystem.SetMoveData(MoveData);
             MoveSystem.SetDestination(_destination);
 

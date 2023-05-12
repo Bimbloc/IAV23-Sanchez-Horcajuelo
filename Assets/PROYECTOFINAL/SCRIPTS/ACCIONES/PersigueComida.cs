@@ -40,10 +40,10 @@ public class PersigueComida : MoveToAction
 
         MoveSystem.Stop();
 
-        Log("Executing");
+        //Log("Executing");
         yield return Execute();
-        Log("Executed");
-        Debug.Log("PERSIGO");
+       // Log("Executed");
+       // Debug.Log("PERSIGO");
         yield break;
     }
 }

@@ -67,6 +67,7 @@ namespace SGoap
 
                 OnFirstPerform?.Invoke();
                 yield return PerformRoutine();
+                //Debug.Log("LLEGUE");
                 Status = EActionStatus.Success;
             }
         }

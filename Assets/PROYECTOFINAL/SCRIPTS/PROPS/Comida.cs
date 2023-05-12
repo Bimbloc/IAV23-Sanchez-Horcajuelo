@@ -15,4 +15,9 @@ public class Comida : MonoBehaviour
     {
         
     }
+    public void Comer()
+    {
+
+        Destroy(this.gameObject);
+    }
 }
