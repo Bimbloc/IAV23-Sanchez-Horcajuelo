@@ -40,9 +40,11 @@ El comportamiendo que se espera obtener es aquel que asegure en la medida de lo 
  
  Dormir : el dinosaurio se detiene y recupera energía . Precondicion : no tiene , Post Condicion : No morir de cansancio
  
- Buscar comida: el dinosaurio se mueve en direccines aleatorias hasta que encuentra comida. Precondicion : no tiene , Post condicion : tengo comida
+ Buscar comida: el dinosaurio se mueve en direccines aleatorias hasta que encuentra comida. Precondicion : no tiene , Post condicion : encontré comida
  
- Comer: el dinosaurio usa la comid para saciar su hambre . Precondición : tengo comida , Post Condición : No morir de hambre 
+ Perseguir Comida : el dinosaurio ha fijado la comida como objetivo y lo persigue. Precondicion : encontré comida , Post condicion : tengo comida 
+ 
+ Comer: el dinosaurio usa la comida para saciar su hambre . Precondición : tengo comida , Post Condición : No morir de hambre 
  
  buscar presa : el dinosaurio se mueve en direcciones aleatorias hasta qeu divisa una presa . Precondicion : no tiene , Post condicion : tengo presa
  
@@ -50,15 +52,36 @@ El comportamiendo que se espera obtener es aquel que asegure en la medida de lo 
  
  Huir : el dinosaurio divisa una amenaza asi que huye . Precondicion : no tiene , Post condicion : No morir devorado.
  
- La prioridad de estos objetivos depende de diversas metricas , cuanto cansancion hayan acumulado cuanta hambre tengan o como de cerca se encuentra la amenaza.
+ La **prioridad** de estos objetivos depende de diversas metricas , cuanto cansancion hayan acumulado cuanta hambre tengan o como de cerca se encuentra la amenaza.
+ 
+ Prioridad No morir de hambre : directamente proporcional a la cantidad de hambre qeu tenga acumulada el dinosaurio , si llega a un maximo perederteminado este se desvanece.El hambre aumenta poco a poco simplemente con el paso del tiempo.
+ 
+ Prioridad No morir devorado : si el dinosaurio no ha detectado niguna amenaza esta metrica se mantiene a 0 .En caso de que haya una amenaza conocida la prioridad es inversamente porporcional a la distancia que separa al dinosaurio de la  amenaza , aumentando cuando la amenaza se acerca.
+ 
+ Prioridad No morir de cansancio : directamente proporcional al cansancion acumulado del dinosaurio . A medida que el dinosaurio se mueve se va cansando.
+ Si llega a un maximo predeterminado el dinosaurio se desvanece.
+ 
+ Los **costes** de las acciones tambien depende de variables qeu iran variando en ejecucion:
+ 
+ Descansar : es la unica excepción ya que parar y no hacer nada  siempre tendrá coste 0.
+ 
+ Huir , Perseguir : cuanto más lejos esté el objetivo más caro será llegar.
+ 
+ Buscar Comida : cuanto más hambriento este el dinosaurio más facil el resultará buscar comida.
+ 
+ Comer : cuanto más cansado esté más dificil le resultará.
  
  # Pruebas y Métricas
  
- Para demostrar el correcto funcionamiento de la inteligencia artificial de los agentes se llevarán a cabo las siguientes pruebas.
- Prueba A : Al iniciar el juego los dinosaurios tienen todos los requisitos de supervivencia al máximo pero a medida que se mueven se cansan y a medida que pasa el tiempo tienen más hambre.Nos centraremos en los herbivoros y observaremos como merodean hasta encontrar una planta que poder comer.
- Prueba B : Después de dejar la simulación  trabajando un rato los dinosaurios carnivoros tendrán hambre asi que intentarán cazar a los herviboros.
- Prueba C : En esta simulación habrá poca comida y veremos como aquellos agentes que no logren obtenerla se desvanecerán
- Prueba D : La simulación avanza y agentes empiezan a estar cansados , los dinosaurios herbivoros que estén lejos de una amenaza podrán dormir pero 
+ Para demostrar el correcto funcionamiento de la inteligencia artificial de los agentes se llevarán a cabo las siguientes pruebas. 
+ 
+ **Prueba A** : Al iniciar el juego los dinosaurios tienen todos los requisitos de supervivencia al máximo pero a medida que se mueven se cansan y a medida que pasa el tiempo tienen más hambre.Nos centraremos en los herbivoros y observaremos como merodean hasta encontrar una planta que poder comer.
+ 
+ **Prueba B** : Después de dejar la simulación  trabajando un rato los dinosaurios carnivoros tendrán hambre asi que intentarán cazar a los herviboros. 
+ 
+ **Prueba C** : En esta simulación habrá poca comida y veremos como aquellos agentes que no logren obtenerla se desvanecerán
+ 
+ **Prueba D** : La simulación avanza y agentes empiezan a estar cansados , los dinosaurios herbivoros que estén lejos de una amenaza podrán dormir pero 
  aquellos que estén derca de carnivoros hambrientos deberán huir hasta dejarlos atrás o desvanecerse por el agoamiento.
  
  # Producción 
