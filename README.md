@@ -32,6 +32,8 @@ El comportamiendo que se espera obtener es aquel que asegure en la medida de lo 
  
  No morir de hambre
  
+ No morir de sed 
+ 
  No morir devorado
  
  No morir de cansancio 
@@ -52,10 +54,18 @@ El comportamiendo que se espera obtener es aquel que asegure en la medida de lo 
  
  Huir : el dinosaurio divisa una amenaza asi que huye . Precondicion : no tiene , Post condicion : No morir devorado.
  
+ Buscar Agua : identico a buscar comida pero su post condicion es  enconré  agua.
+ 
+ Perseguir Agua : identico a perseguir comida.Pre condicion: encontré agua , post condicion :  tengo agua 
+ 
+ Beber : consume el agua , pre condicion tengo agua , post condicon no morir de sed.
+ 
  La **prioridad** de estos objetivos depende de diversas metricas , cuanto cansancion hayan acumulado cuanta hambre tengan o como de cerca se encuentra la amenaza.
  
- Prioridad No morir de hambre : directamente proporcional a la cantidad de hambre qeu tenga acumulada el dinosaurio , si llega a un maximo perederteminado este se desvanece.El hambre aumenta poco a poco simplemente con el paso del tiempo.
+ Prioridad No morir de hambre : directamente proporcional a la cantidad de hambre que tenga acumulada el dinosaurio , si llega a un maximo perederteminado este se desvanece.El hambre aumenta poco a poco simplemente con el paso del tiempo.Beber agua aumenta su hambre.
  
+ Prioridad  No morir de sed : directamente proporcional a la cantidad de sed que tenga acumulada el dinosaurio , si llega a un maximo perederteminado este se desvanece.La sed aumenta poco a poco simplemente con el paso del tiempo.Comer comida te aumenta la sed.
+  
  Prioridad No morir devorado : si el dinosaurio no ha detectado niguna amenaza esta metrica se mantiene a 0 .En caso de que haya una amenaza conocida la prioridad es inversamente porporcional a la distancia que separa al dinosaurio de la  amenaza , aumentando cuando la amenaza se acerca.
  
  Prioridad No morir de cansancio : directamente proporcional al cansancion acumulado del dinosaurio . A medida que el dinosaurio se mueve se va cansando.
@@ -92,6 +102,7 @@ El comportamiendo que se espera obtener es aquel que asegure en la medida de lo 
 | :----: | :------------------------------------------- | :---: | :--------------- |
 |   ✔    |  Documentación y diagramas | 11-05 | Rocío            |
 |   ✔    | Prototipar para elegir plug-ins  | 10-05 | Rocío            |
+|   ✔    | Crear agente base con tareas comunes   | 13-05 | Rocío            |
 
  
  
