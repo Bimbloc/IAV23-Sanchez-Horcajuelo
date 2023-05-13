@@ -14,6 +14,7 @@ public class BuscaComida : BasicAction
     public MoveData MoveData;
     public MoveSystem MoveSystem;
     public float Range = 5;
+    Vector3 newPosition;
     public override float StaggerTime => cooldown;
     private Vector3 _startPosition;
     private Vector3 _destination;
@@ -31,7 +32,8 @@ public class BuscaComida : BasicAction
     public override EActionStatus Perform()
     {
         _startPosition = runrimeInfo.Agent.transform.position;
-        _destination = GetSeekPosition();
+       // _destination = GetSeekPosition();
+        //Debug.Log("BuscaComida");
         if (runrimeInfo.GetTargetComida() == null)
         {
             //Debug.Log("estoybuscandocomida" + runrimeInfo.GetTarget());
@@ -47,6 +49,15 @@ public class BuscaComida : BasicAction
         Debug.Log("encontrada");
         return EActionStatus.Success;
     }
+    public override bool PrePerform()
+    {
+        // By default, when post perform happens, the Agent is staggered and has a cool down. You can override.
+        if (MoveSystem.ReachedDestination())
+        {
+            _destination = GetSeekPosition();
+        }
+        return base.PrePerform();
+    }
 
     public override bool PostPerform()
     {
@@ -61,12 +72,38 @@ public class BuscaComida : BasicAction
     }
      Vector3 GetSeekPosition()
     {
-        // Instead for production code, you'll want to sample a nav mesh position that matches.
-        var newPosition = _startPosition + Random.insideUnitSphere * Range;
+      
+        newPosition =( _startPosition  + transform.forward ) + Random.insideUnitSphere * Range;
+        while(!Inplayablearea(newPosition))
+        { newPosition = _startPosition + Random.insideUnitSphere * Range; }
         newPosition += transform.forward;
+        if(runrimeInfo.ClosetsComida()!= null)
+        {
+            Debug.Log("Comida Cercana ");
+            // newPosition +=   (runrimeInfo.ClosetsComida().position - newPosition)/2;     
+            newPosition = Vector3.Slerp(runrimeInfo.ClosetsComida().position, newPosition, 0.5f);
+        }
         newPosition.y = transform.position.y;
         return newPosition;
     }
+    bool Inplayablearea(Vector3 p)
+    {
+        GameObject area = runrimeInfo.playablearea;
+        //las esquinas
+        int xmax = (int)area.transform.position.x + (int)(area.transform.localScale.x / 2);
+        int xmin = (int)area.transform.position.x - (int)(area.transform.localScale.x / 2);
+        int zmax = (int)area.transform.position.z + (int)(area.transform.localScale.z / 2);
+        int zmin = (int)area.transform.position.z -(int)(area.transform.localScale.z/ 2);
+        return (p.x < xmax && p.x > xmin && p.z < zmax && p.z > zmin);
+        //return (p.x < (area.transform.position.x + area.transform.localScale.x / 2) && p.x > (area.transform.position.x - area.transform.localScale.x / 2) && p.z < (area.transform.position.z + area.transform.localScale.z / 2) && p.z > (area.transform.position.z + area.transform.localScale.z / 2));
+
+    }
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawSphere(newPosition, 1);
+    }
+
     /*public override IEnumerator PerformRoutine()
     {
         while (runrimeInfo.GetTarget() == null)

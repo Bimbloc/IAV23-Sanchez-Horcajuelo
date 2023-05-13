@@ -29,7 +29,7 @@ public class Beber : BasicAction
 
         runtimedinfo.GetTargetAgua().GetComponent<Agua>().Beber();
         runtimedinfo.SetTargetAgua(null);
-        runtimedinfo.sed--;
+        runtimedinfo.sed/=3;
         runtimedinfo.hambre++;
         return EActionStatus.Success;
     }

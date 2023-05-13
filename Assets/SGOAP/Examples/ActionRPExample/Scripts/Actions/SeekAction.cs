@@ -19,7 +19,7 @@ namespace SGOAP.Examples
         {
             _startPosition = RuntimeData.Agent.transform.position;
             _destination = GetSeekPosition();
-            Debug.Log("simepre busca?");
+          //  Debug.Log("simepre busca?");
             while (RuntimeData.ActionTarget == null)
             {
                 MoveSystem.SetMoveData(MoveData);

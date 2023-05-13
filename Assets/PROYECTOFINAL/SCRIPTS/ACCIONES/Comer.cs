@@ -29,8 +29,9 @@ public class Comer : BasicAction
        
          runtimedinfo.GetTargetComida().GetComponent<Comida>().Comer();
          runtimedinfo.SetTargetComida(null);
-          runtimedinfo.hambre--;
+          runtimedinfo.hambre/=3;
         runtimedinfo.sed++;
+        runtimedinfo.sueño++;
         return EActionStatus.Success;
     }
 

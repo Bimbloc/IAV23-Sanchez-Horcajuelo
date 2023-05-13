@@ -8,7 +8,10 @@ public class DinosaurRunrimeInfo : AgentRuntimeActionData
     // Start is called before the first frame update
     //Toda la informacion del estado del dinosaurio si tiene hambe sed si está cazando , huyendo...
     GameObject comida = null; //El sensor de vista aportará valor a esta variable
-    GameObject agua = null; 
+    GameObject agua = null;
+    Transform ClosestComida = null; // el sensor olfato puede percibir más lejos y afectar a la direcciond e merodeo
+    Transform ClosestAgua = null;
+    public GameObject playablearea = null; 
    public  int hambre = 0;
    public  int sueño = 0;
     public int sed = 0;
@@ -44,6 +47,27 @@ public class DinosaurRunrimeInfo : AgentRuntimeActionData
     {
         return agua;
     }
+
+    public void SetClosestComida(Transform t)
+    {
+        ClosestComida = t;
+    }
+
+    public Transform ClosetsComida()
+    {
+
+        return ClosestComida;
+    }
+    public void SetClosestAgua(Transform t)
+    {
+        ClosestAgua = t;
+    }
+
+    public Transform ClosetsAgua()
+    {
+
+        return ClosestAgua;
+    }
     // Update is called once per frame
     void GanarHambre()
     {
@@ -53,7 +77,7 @@ public class DinosaurRunrimeInfo : AgentRuntimeActionData
     {
 
         Vector3 desp =new Vector3( Mathf.Abs( transform.position.x - prevposs.x), Mathf.Abs(transform.position.y - prevposs.y), Mathf.Abs(transform.position.z - prevposs.z));
-        sueño+=( int ) desp.magnitude;
+        sueño+=( int ) desp.magnitude/2;
         prevposs = transform.position;
     }
     void GanarSed()
