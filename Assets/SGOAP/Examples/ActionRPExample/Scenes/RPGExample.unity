@@ -185,6 +185,7 @@ MonoBehaviour:
   AbortEvaluatorType: 0
   runtimedinfo: {fileID: 987010702}
   movsys: {fileID: 1079322134}
+  cooldown: 4
 --- !u!1 &89778107
 GameObject:
   m_ObjectHideFlags: 0
@@ -420,6 +421,75 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 229878620}
   m_CullTransparentMesh: 0
+--- !u!1 &254832423
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 254832424}
+  - component: {fileID: 254832425}
+  m_Layer: 0
+  m_Name: BucaAgua
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &254832424
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 254832423}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 531770054}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &254832425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 254832423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7fd18b1c11ad6846950e51d0ac2a99f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Action
+  Cost: 1
+  CostEvaluator: {fileID: 0}
+  UsableEvaluator: {fileID: 0}
+  AbortEvaluator: {fileID: 0}
+  PreConditions: []
+  AfterEffects:
+  - KeyReference: {fileID: 0}
+    Concatenator: {fileID: 0}
+    StateType: 1
+    Value: 0
+    StringValue: encontreagua
+    Operator: 0
+  CostEvaluationType: 0
+  AchievableEvaluationType: 0
+  AbortEvaluatorType: 0
+  runrimeInfo: {fileID: 987010702}
+  RuntimeData: {fileID: 0}
+  MoveData:
+    MoveSpeed: 5
+    TurnSpeed: 30
+    StopDistance: 1
+  MoveSystem: {fileID: 1079322134}
+  Range: 5
+  cooldown: 0.3
 --- !u!1 &262708218
 GameObject:
   m_ObjectHideFlags: 0
@@ -808,7 +878,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 531770053}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -817,6 +887,9 @@ Transform:
   - {fileID: 1585036298}
   - {fileID: 625753161}
   - {fileID: 72815679}
+  - {fileID: 254832424}
+  - {fileID: 905650564}
+  - {fileID: 2039396063}
   m_Father: {fileID: 987010697}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1161,6 +1234,106 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 660960436}
   m_CullTransparentMesh: 0
+--- !u!1 &905650563
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 905650564}
+  - component: {fileID: 905650565}
+  m_Layer: 0
+  m_Name: PersigueAgua
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &905650564
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 905650563}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 531770054}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &905650565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 905650563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 439b54da423ef1e45b2533c7d091a0a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Action
+  Cost: 1
+  CostEvaluator: {fileID: 0}
+  UsableEvaluator: {fileID: 0}
+  AbortEvaluator: {fileID: 0}
+  PreConditions:
+  - KeyReference: {fileID: 0}
+    Concatenator: {fileID: 0}
+    StateType: 1
+    Value: 0
+    StringValue: encontreagua
+    Operator: 0
+  AfterEffects:
+  - KeyReference: {fileID: 0}
+    Concatenator: {fileID: 0}
+    StateType: 1
+    Value: 0
+    StringValue: tengoagua
+    Operator: 0
+  CostEvaluationType: 0
+  AchievableEvaluationType: 0
+  AbortEvaluatorType: 0
+  CoroutineData:
+    MinimumRuntime: 0.5
+    CooldownRangeValue:
+      Min: 0
+      Max: 0
+      Value: 0
+    StaggerRangeValue:
+      Min: 0
+      Max: 0
+      Value: 0
+    UseMaxRuntime: 0
+    MaxRuntimeRangeValue:
+      Min: 2
+      Max: 5
+      Value: 0
+    StopOnFailed: 1
+    RunCooldownOnFailed: 1
+  MinimumRuntime: 0.5
+  CooldownRangeValue:
+    Min: 0
+    Max: 0
+    Value: 0
+  StaggerRangeValue:
+    Min: 0
+    Max: 0
+    Value: 0
+  MoveData:
+    MoveSpeed: 5
+    TurnSpeed: 30
+    StopDistance: 1
+  MoveSystem: {fileID: 1079322134}
+  EnableLog: 0
+  RuntimeData: {fileID: 0}
+  runtimedinfo: {fileID: 987010702}
 --- !u!1 &936709459
 GameObject:
   m_ObjectHideFlags: 0
@@ -1384,6 +1557,15 @@ MonoBehaviour:
     Priority: 3
     Once: 0
     TotalCost: 0
+  - KeyReference: {fileID: 0}
+    Concatenator: {fileID: 0}
+    StateType: 1
+    Value: 0
+    StringValue: Nomorirdesed
+    Operator: 0
+    Priority: 3
+    Once: 0
+    TotalCost: 0
   PlannerSettings:
     RunOnLateUpdate: 1
     CanAbortPlans: 1
@@ -1443,6 +1625,7 @@ MonoBehaviour:
   PickupTarget: {fileID: 0}
   hambre: 0
   "sue\xF1o": 0
+  sed: 0
 --- !u!4 &1001759988 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4477008259714068799, guid: 2d646193feb78d04997ef417e6307f78, type: 3}
@@ -1481,6 +1664,103 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5536a181d9d57734783516e557eaef42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1069873179
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1069873183}
+  - component: {fileID: 1069873182}
+  - component: {fileID: 1069873181}
+  - component: {fileID: 1069873180}
+  m_Layer: 0
+  m_Name: agua
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &1069873180
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1069873179}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1069873181
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1069873179}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1069873182
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1069873179}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1069873183
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1069873179}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 0.26623, z: 24.709042}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1079322132
 GameObject:
   m_ObjectHideFlags: 0
@@ -2346,6 +2626,73 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6422094220540393254, guid: 13d92db9a3b86a04493535d2a9f0c9f7, type: 3}
   m_PrefabInstance: {fileID: 2029317238}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2039396062
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2039396063}
+  - component: {fileID: 2039396064}
+  m_Layer: 0
+  m_Name: Beber
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2039396063
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2039396062}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 531770054}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2039396064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2039396062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27d11946b5aca1449854cf0d8c4b8be6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Action
+  Cost: 1
+  CostEvaluator: {fileID: 0}
+  UsableEvaluator: {fileID: 0}
+  AbortEvaluator: {fileID: 0}
+  PreConditions:
+  - KeyReference: {fileID: 0}
+    Concatenator: {fileID: 0}
+    StateType: 1
+    Value: 0
+    StringValue: tengoagua
+    Operator: 0
+  AfterEffects:
+  - KeyReference: {fileID: 0}
+    Concatenator: {fileID: 0}
+    StateType: 1
+    Value: 0
+    StringValue: Nomorirdesed
+    Operator: 0
+  CostEvaluationType: 0
+  AchievableEvaluationType: 0
+  AbortEvaluatorType: 0
+  runtimedinfo: {fileID: 987010702}
 --- !u!1 &2050010520
 GameObject:
   m_ObjectHideFlags: 0

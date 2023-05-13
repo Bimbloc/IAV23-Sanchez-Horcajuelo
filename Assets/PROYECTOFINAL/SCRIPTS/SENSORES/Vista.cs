@@ -24,7 +24,8 @@ public class Vista : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if(other.GetComponent<Comida>())
-        runrimeInfo.SetTarget(other.gameObject);
-
+        runrimeInfo.SetTargetComida(other.gameObject);
+        if(other.GetComponent<Agua>())
+            runrimeInfo.SetTargetAgua(other.gameObject);
     }
 }

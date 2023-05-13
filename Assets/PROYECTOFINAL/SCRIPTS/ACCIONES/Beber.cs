@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Comer : BasicAction
+public class Beber : BasicAction
 {
     public DinosaurRunrimeInfo runtimedinfo;
     // Start is called before the first frame update
@@ -26,11 +26,11 @@ public class Comer : BasicAction
     public override EActionStatus Perform()
     {
         //llegados a este punto el target solo puede ser comida 
-       
-         runtimedinfo.GetTargetComida().GetComponent<Comida>().Comer();
-         runtimedinfo.SetTargetComida(null);
-          runtimedinfo.hambre--;
-        runtimedinfo.sed++;
+
+        runtimedinfo.GetTargetAgua().GetComponent<Agua>().Beber();
+        runtimedinfo.SetTargetAgua(null);
+        runtimedinfo.sed--;
+        runtimedinfo.hambre++;
         return EActionStatus.Success;
     }
 
@@ -45,5 +45,4 @@ public class Comer : BasicAction
     {
         base.OnFailed();
     }
-
 }

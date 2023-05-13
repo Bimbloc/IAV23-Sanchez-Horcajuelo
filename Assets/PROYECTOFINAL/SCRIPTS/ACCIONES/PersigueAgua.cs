@@ -1,27 +1,26 @@
-using SGoap;
 using SGOAP.Examples;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PersigueComida : MoveToAction
+public class PersigueAgua : MoveToAction
 {
-    public DinosaurRunrimeInfo runtimedinfo; 
-    
+    public DinosaurRunrimeInfo runtimedinfo;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
     public override Transform GetDestination()
     {
-        return runtimedinfo.GetTargetComida().transform;
+        return runtimedinfo.GetTargetAgua().transform;
     }
     public override IEnumerator PerformRoutine()
     {
@@ -42,8 +41,8 @@ public class PersigueComida : MoveToAction
 
         //Log("Executing");
         yield return Execute();
-       // Log("Executed");
-       // Debug.Log("PERSIGO");
+        // Log("Executed");
+        // Debug.Log("PERSIGO");
         yield break;
     }
 }
