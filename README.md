@@ -30,35 +30,35 @@ El comportamiendo que se espera obtener es aquel que asegure en la medida de lo 
  
  En particular los dinosaurios en este proyecto contarán con los siguientes objetivos:
  
- No morir de hambre
+ - No morir de hambre
  
- No morir de sed 
+ - No morir de sed 
  
- No morir devorado
+ - No morir devorado
  
- No morir de cansancio 
+ - No morir de cansancio 
  
  Y los intentarán cumplir a través de las siguientes acciones : 
  
- Dormir : el dinosaurio se detiene y recupera energía . Precondicion : no tiene , Post Condicion : No morir de cansancio
+ - Dormir : el dinosaurio se detiene y recupera energía . Precondicion : no tiene , Post Condicion : No morir de cansancio
  
- Buscar comida: el dinosaurio se mueve en direccines aleatorias hasta que encuentra comida. Precondicion : no tiene , Post condicion : encontré comida
+ - Buscar comida: el dinosaurio se mueve en direccines aleatorias hasta que encuentra comida. Precondicion : no tiene , Post condicion : encontré comida
  
- Perseguir Comida : el dinosaurio ha fijado la comida como objetivo y lo persigue. Precondicion : encontré comida , Post condicion : tengo comida 
+ - Perseguir Comida : el dinosaurio ha fijado la comida como objetivo y lo persigue. Precondicion : encontré comida , Post condicion : tengo comida 
  
- Comer: el dinosaurio usa la comida para saciar su hambre . Precondición : tengo comida , Post Condición : No morir de hambre 
+ - Comer: el dinosaurio usa la comida para saciar su hambre . Precondición : tengo comida , Post Condición : No morir de hambre 
  
- buscar presa : el dinosaurio se mueve en direcciones aleatorias hasta qeu divisa una presa . Precondicion : no tiene , Post condicion : tengo presa
+ - Buscar presa : el dinosaurio se mueve en direcciones aleatorias hasta qeu divisa una presa . Precondicion : no tiene , Post condicion : tengo presa
  
- Cazar : el dinosaurio ha encontrado una presa asi que la persigue.Preccondicion : tengo presa , Post condicion : tengo comida.
+ - Cazar : el dinosaurio ha encontrado una presa asi que la persigue.Preccondicion : tengo presa , Post condicion : tengo comida.
  
- Huir : el dinosaurio divisa una amenaza asi que huye . Precondicion : no tiene , Post condicion : No morir devorado.
+ - Huir : el dinosaurio divisa una amenaza asi que huye . Precondicion : no tiene , Post condicion : No morir devorado.
  
- Buscar Agua : identico a buscar comida pero su post condicion es  enconré  agua.
+ - Buscar Agua : identico a buscar comida pero su post condicion es  enconré  agua.
  
- Perseguir Agua : identico a perseguir comida.Pre condicion: encontré agua , post condicion :  tengo agua 
+ - Perseguir Agua : identico a perseguir comida.Pre condicion: encontré agua , post condicion :  tengo agua 
  
- Beber : consume el agua , pre condicion tengo agua , post condicon no morir de sed.
+ - Beber : consume el agua , pre condicion tengo agua , post condicon no morir de sed.
  
  La **prioridad** de estos objetivos depende de diversas metricas , cuanto cansancion hayan acumulado cuanta hambre tengan o como de cerca se encuentra la amenaza.
  
@@ -81,6 +81,16 @@ El comportamiendo que se espera obtener es aquel que asegure en la medida de lo 
  
  Comer : cuanto más cansado esté más dificil le resultará.
  
+ ## Implementación de los Agentes inteligentes 
+ ![imagenagentes](https://github.com/Bimbloc/IAV23-Sanchez-Horcajuelo/blob/main/Basicagents.PNG)
+ 
+ Los agentes utilizan sensores para percibir el entorno acciones para interactuar con el y en este caso un unico sistema que se encargará del movimiento.
+ Para recaudar información sobre el espacio de juego contarán con 2 sensores.Primero el sensor de vista compuesto por un sencillo cono de visión colocado en frente del agente  , un trigger que detecta los objetos que resulten interesantes para el agente como pueden ser la comida y el agua.
+ Cuando un objeto detectable entra en el cono de visión el agente este pasa a conocer su posición exacta ya que oficialmente "puede verlo".
+ El segundo sensor es el olfato conformado por un area circular alrederdor del agente (las lineas amarillas que se aprecian en la imagen) en cada tick 
+ de física (FixedUpdate ()) se ejecuta una función que decta los objetos que se solapan con este cícurlo . Al oler objetos perceptibles el agente no sabe su posicion exacta pero si puede intuir la dirección en la que se encuentra.En las acciones de busqeuda la direccion de movimiento original es puramente
+ aleatoria pero si "huele" el objeto que está buscando podemos usar la dirección que nos proporcionas el sensor para interporlarla con la direccion aleatoria y asi merodear hacia ese area : 
+ ![vectores interpolados](https://github.com/Bimbloc/IAV23-Sanchez-Horcajuelo/blob/main/vectoresdino.png)
  # Pruebas y Métricas
  
  Para demostrar el correcto funcionamiento de la inteligencia artificial de los agentes se llevarán a cabo las siguientes pruebas. 
