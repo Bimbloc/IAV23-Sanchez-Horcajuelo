@@ -41,7 +41,7 @@ public class Olfato : MonoBehaviour
        
         foreach (Collider c in Objetosencirculo)
         {
-            if (c.gameObject.GetComponent<Comida>())
+            if (c.gameObject.GetComponent<Comida>() && c.gameObject.GetComponent<Comida>().type == runtimedinfo.AgentCharacter.foodtype)
             {
                 int distanciaactual = (int)Mathf.Abs(Vector3.Magnitude(transform.position - c.transform.position));//la distancia a la comida 
                 if (closestcomidadistancia > distanciaactual)

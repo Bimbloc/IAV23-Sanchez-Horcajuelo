@@ -20,7 +20,9 @@ public class BuscaComida : BasicAction
     private Vector3 _destination;
     void Start()
     {
-       
+        newPosition = (_startPosition + transform.forward) + Random.insideUnitSphere * Range;
+        while (!Inplayablearea(newPosition))
+        { newPosition = _startPosition + Random.insideUnitSphere * Range; }
     }
 
     // Update is called once per frame
@@ -46,8 +48,20 @@ public class BuscaComida : BasicAction
             }
             return EActionStatus.Running;
         }
-        Debug.Log("encontrada");
+      //  Debug.Log("encontrada");
         return EActionStatus.Success;
+    }
+    public override void DynamicallyEvaluateCost()
+    {
+        base.DynamicallyEvaluateCost();
+        //el coste es la distancia hasta el punto al que vamos 
+        if (runrimeInfo.ClosetsComida() != null)
+        {
+            Cost = Mathf.Abs(Vector3.Magnitude(runrimeInfo.ClosetsComida().position - transform.position));
+               
+        }
+        else
+            Cost = Range;
     }
     public override bool PrePerform()
     {
@@ -62,6 +76,7 @@ public class BuscaComida : BasicAction
     public override bool PostPerform()
     {
         // By default, when post perform happens, the Agent is staggered and has a cool down. You can override.
+      
         return base.PostPerform();
     }
 
@@ -74,12 +89,12 @@ public class BuscaComida : BasicAction
     {
       
         newPosition =( _startPosition  + transform.forward ) + Random.insideUnitSphere * Range;
-        while(!Inplayablearea(newPosition))
+        while(!Inplayablearea(newPosition + transform.forward))
         { newPosition = _startPosition + Random.insideUnitSphere * Range; }
-        newPosition += transform.forward;
+       
         if(runrimeInfo.ClosetsComida()!= null)
         {
-            Debug.Log("Comida Cercana ");
+            //Debug.Log("Comida Cercana ");
             // newPosition +=   (runrimeInfo.ClosetsComida().position - newPosition)/2;     
             newPosition = Vector3.Slerp(runrimeInfo.ClosetsComida().position, newPosition, 0.5f);
         }

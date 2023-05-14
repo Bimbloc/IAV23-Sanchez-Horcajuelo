@@ -23,9 +23,12 @@ public class Vista : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if(other.GetComponent<Comida>())
+        if(other.GetComponent<Comida>()&& other.GetComponent<Comida>().type == runrimeInfo.AgentCharacter.foodtype)
         runrimeInfo.SetTargetComida(other.gameObject);
-        if(other.GetComponent<Agua>())
+        if (other.GetComponent<Agua>())
+        {
             runrimeInfo.SetTargetAgua(other.gameObject);
+           // Debug.Log("Veo Agua");
+        }
     }
 }

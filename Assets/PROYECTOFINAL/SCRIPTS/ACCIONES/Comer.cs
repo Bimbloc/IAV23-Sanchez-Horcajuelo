@@ -26,7 +26,8 @@ public class Comer : BasicAction
     public override EActionStatus Perform()
     {
         //llegados a este punto el target solo puede ser comida 
-       
+      
+         if (runtimedinfo.GetTargetComida()!=null)// puede que se lo haya comido otro 
          runtimedinfo.GetTargetComida().GetComponent<Comida>().Comer();
          runtimedinfo.SetTargetComida(null);
           runtimedinfo.hambre/=3;

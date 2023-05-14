@@ -39,7 +39,8 @@ public class Descansar :BasicAction
         potencia = runtimedinfo.sueño / duracion;
         runtimedinfo.gameObject.GetComponent<Rigidbody>().isKinematic = true;
         movsys.Stop();
-        Debug.Log("zzz");
+        transform.parent.parent.GetComponent<Rigidbody>().velocity = new Vector3(0,0,0);
+        //Debug.Log("zzz");
         runtimedinfo.sueño-=potencia;
         runtimedinfo.sed ++;
         count++;

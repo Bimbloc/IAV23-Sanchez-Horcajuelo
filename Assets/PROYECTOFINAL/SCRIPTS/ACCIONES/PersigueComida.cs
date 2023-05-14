@@ -6,8 +6,8 @@ using UnityEngine;
 
 public class PersigueComida : MoveToAction
 {
-    public DinosaurRunrimeInfo runtimedinfo; 
-    
+    public DinosaurRunrimeInfo runtimedinfo;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +21,14 @@ public class PersigueComida : MoveToAction
     }
     public override Transform GetDestination()
     {
-        return runtimedinfo.GetTargetComida().transform;
+        if (runtimedinfo.ClosetsComida() != null)// si se lo comio otro antes va  a dar null 
+        {
+            runtimedinfo.SetClosestComida(null);
+            return transform;
+
+        }
+
+        return runtimedinfo.GetTargetComida().transform; 
     }
     public override IEnumerator PerformRoutine()
     {

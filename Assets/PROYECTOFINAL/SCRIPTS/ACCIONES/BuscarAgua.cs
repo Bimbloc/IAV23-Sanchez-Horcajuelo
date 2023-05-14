@@ -19,13 +19,27 @@ public class BuscarAgua : BasicAction
     // Start is called before the first frame update
     void Start()
     {
-        
+        newPosition = (_startPosition + transform.forward) + Random.insideUnitSphere * Range;
+        while (!Inplayablearea(newPosition))
+        { newPosition = _startPosition + Random.insideUnitSphere * Range; }
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+    public override void DynamicallyEvaluateCost()
+    {
+        base.DynamicallyEvaluateCost();
+        //el coste es la distancia hasta el punto al que vamos 
+        if (runrimeInfo.ClosetsAgua() != null)
+        {
+            Cost = Mathf.Abs(Vector3.Magnitude(runrimeInfo.ClosetsAgua().position - transform.position));
+
+        }
+        else
+            Cost = Range;
     }
     public override bool PrePerform()
     {
@@ -54,7 +68,7 @@ public class BuscarAgua : BasicAction
             }
             return EActionStatus.Running;
         }
-        Debug.Log("encontrada");
+      ///  Debug.Log("encontrada");
         return EActionStatus.Success;
     }
 
@@ -74,8 +88,13 @@ public class BuscarAgua : BasicAction
         newPosition = (_startPosition + transform.forward) + Random.insideUnitSphere * Range;
         while (!Inplayablearea(newPosition))
         { newPosition = _startPosition + Random.insideUnitSphere * Range; }
-        newPosition = _startPosition + Random.insideUnitSphere * Range;
-        newPosition += transform.forward;
+        if (runrimeInfo.ClosetsAgua() != null)
+        {
+            //Debug.Log("Comida Cercana ");
+            // newPosition +=   (runrimeInfo.ClosetsComida().position - newPosition)/2;     
+            newPosition = Vector3.Slerp(runrimeInfo.ClosetsAgua().position, newPosition, 0.5f);
+        }
+   
         newPosition.y = transform.position.y;
         return newPosition;
     }

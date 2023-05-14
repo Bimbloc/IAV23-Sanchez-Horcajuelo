@@ -11,9 +11,10 @@ public class Hervibore : Character
    // Como interactua con carnivoros
   // Start is called before the first frame update
   // El plugin usa scriptable objects pero vamos a usar colisiones y ya
+    
     void Start()
     {
-        
+        foodtype = 0;  
     }
 
     // Update is called once per frame
