@@ -34,5 +34,11 @@ namespace SGOAP.Examples
             NavAgent.angularSpeed = data.TurnSpeed;
             NavAgent.stoppingDistance = data.StopDistance;
         }
+
+        public override void ClearPath()
+        {
+
+            NavAgent.ResetPath();
+        }
     }
 }

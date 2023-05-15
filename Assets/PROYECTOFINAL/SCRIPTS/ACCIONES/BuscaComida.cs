@@ -18,11 +18,31 @@ public class BuscaComida : BasicAction
     public override float StaggerTime => cooldown;
     private Vector3 _startPosition;
     private Vector3 _destination;
-    void Start()
+
+    void Awake()
     {
+       /* MoveSystem.ClearPath();
+        _startPosition = runrimeInfo.Agent.transform.position;
         newPosition = (_startPosition + transform.forward) + Random.insideUnitSphere * Range;
         while (!Inplayablearea(newPosition))
         { newPosition = _startPosition + Random.insideUnitSphere * Range; }
+        newPosition.y = transform.position.y;
+        Debug.Log("c " + newPosition);
+        MoveSystem.SetDestination(_destination);*/
+    }
+    void Start()
+    {
+        /*newPosition = (_startPosition + transform.forward) + Random.insideUnitSphere * Range;
+        while (!Inplayablearea(newPosition))
+        { newPosition = _startPosition + Random.insideUnitSphere * Range; }*/
+        MoveSystem.ClearPath();
+        _startPosition = runrimeInfo.Agent.transform.position;
+        newPosition = (_startPosition + transform.forward) + Random.insideUnitSphere * Range;
+        while (!Inplayablearea(newPosition))
+        { newPosition = _startPosition + Random.insideUnitSphere * Range; }
+        newPosition.y = transform.position.y;
+        _destination = newPosition;
+        MoveSystem.SetDestination(_destination);
     }
 
     // Update is called once per frame
@@ -87,7 +107,7 @@ public class BuscaComida : BasicAction
     }
      Vector3 GetSeekPosition()
     {
-      
+        _startPosition = runrimeInfo.Agent.transform.position;
         newPosition =( _startPosition  + transform.forward ) + Random.insideUnitSphere * Range;
         while(!Inplayablearea(newPosition + transform.forward))
         { newPosition = _startPosition + Random.insideUnitSphere * Range; }

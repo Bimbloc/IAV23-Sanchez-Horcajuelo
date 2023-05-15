@@ -11,6 +11,7 @@ namespace SGOAP.Examples
         public virtual void SetDestination(Vector3 destination)
         {
             Destination = destination;
+           
         }
 
         public virtual void SetMoveData(MoveData data)
@@ -25,5 +26,7 @@ namespace SGOAP.Examples
 
         public abstract bool ReachedDestination();
         public abstract void Stop();
+
+        public abstract void ClearPath();
     }
 }

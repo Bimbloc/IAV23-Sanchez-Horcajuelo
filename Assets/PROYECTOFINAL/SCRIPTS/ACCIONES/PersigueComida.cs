@@ -21,9 +21,9 @@ public class PersigueComida : MoveToAction
     }
     public override Transform GetDestination()
     {
-        if (runtimedinfo.ClosetsComida() != null)// si se lo comio otro antes va  a dar null 
+        if (runtimedinfo.GetTargetComida() == null)// si se lo comio otro antes va  a dar null 
         {
-            runtimedinfo.SetClosestComida(null);
+            runtimedinfo.SetTargetComida(null);
             return transform;
 
         }

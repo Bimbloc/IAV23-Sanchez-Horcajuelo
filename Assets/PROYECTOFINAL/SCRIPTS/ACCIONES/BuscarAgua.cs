@@ -16,12 +16,24 @@ public class BuscarAgua : BasicAction
     public override float StaggerTime => cooldown;
     private Vector3 _startPosition;
     private Vector3 _destination;
-    // Start is called before the first frame update
-    void Start()
+
+    void Awake()
     {
+        _startPosition = runrimeInfo.Agent.transform.position;
         newPosition = (_startPosition + transform.forward) + Random.insideUnitSphere * Range;
         while (!Inplayablearea(newPosition))
         { newPosition = _startPosition + Random.insideUnitSphere * Range; }
+        newPosition.y = transform.position.y;
+        _destination = newPosition;
+        MoveSystem.SetDestination(_destination);
+
+    }
+    // Start is called before the first frame update
+    void Start()
+    {
+        /*newPosition = (_startPosition + transform.forward) + Random.insideUnitSphere * Range;
+        while (!Inplayablearea(newPosition))
+        { newPosition = _startPosition + Random.insideUnitSphere * Range; }*/
     }
 
     // Update is called once per frame
