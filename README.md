@@ -73,13 +73,43 @@ El comportamiendo que se espera obtener es aquel que asegure en la medida de lo 
  
  Los **costes** de las acciones tambien depende de variables qeu iran variando en ejecucion:
  
- Descansar : es la unica excepción ya que parar y no hacer nada  siempre tendrá coste 0.
+ - Descansar : es la unica excepción ya que parar y no hacer nada  siempre tendrá coste 0.
  
- Huir , Perseguir : cuanto más lejos esté el objetivo más caro será llegar.
+ - Huir , Perseguir : cuanto más lejos esté el objetivo más caro será llegar.
  
- Buscar Comida : cuanto más hambriento este el dinosaurio más facil el resultará buscar comida.
+ - Buscar Comida o Agua  : Si el olfato nos ha dado una  posicion aproximada el coste será la distancia hasta ese punto, si no el coste es directamente el rango ya que es lo máximo que se puede mover el agente.
  
- Comer : cuanto más cansado esté más dificil le resultará.
+ - Cazar : Seria el equivalente a  buscar presa y a parte  de aumentar con la distancia a la posicion aproximada o el rango tambien lo hace con el sueño pero decrementa a medida que el hambre del agente aumenta.
+
+Las acciones se pueden generalizar  en acciones de busqueda , persecucion y uso . La soluciones se basarán en una estructura similar al pseudocodigo  mostrado a continuación: 
+
+Acciones de Búsqueda : 
+```python
+While target == null :
+ if DestinationReached()
+   searchposition = GetRandomPositionInCircle(Range)
+   SetDestination(searchposition)
+ return Running
+return Success 
+
+```
+Acciones de persecucion : 
+
+```python
+if not DestinationReached():
+ return Running
+else
+ Agent.Stop()
+ return Success 
+```
+
+Acciones de uso : 
+```python
+if object != null 
+  object.Use()
+``` 
+ 
+ Todas las acciones se aseguran de que son usables  antes de activarse en su metodo pre perform y todas las acciones  activan su cooldown tras usarse ne su metodo post perfom.Las acciones tienen un metodo Dynamically evaluate cost donde  se les  asignan los  costes antes de elaborar el plan.
  
  ## Implementación de los Agentes inteligentes 
  ![imagenagentes](https://github.com/Bimbloc/IAV23-Sanchez-Horcajuelo/blob/main/Basicagents.PNG)
@@ -113,6 +143,17 @@ El comportamiendo que se espera obtener es aquel que asegure en la medida de lo 
 |   ✔    |  Documentación y diagramas | 11-05 | Rocío            |
 |   ✔    | Prototipar para elegir plug-ins  | 10-05 | Rocío            |
 |   ✔    | Crear agente base con tareas comunes   | 13-05 | Rocío            |
+|   ✔    | Implementar interacciones con el ratón   | 15-05 | Rocío            |
+|   ✔    |  Terminar la documentación   | 17-05 | Rocío            |
+|   X   | Completar la implementacion de herviboros  | na| Rocío            |
+|   X   | Completar la implementacion de carnivoros  | na| Rocío            |
+|   X   | Mejorar la estetica de la práctica  | na| Rocío            |
+
+
+# Referencias 
+- Plug In de GOAPS en unty : [plug in de SGOAP](https://assetstore.unity.com/packages/tools/ai/s-goap-ai-solution-167167)
+
+
 
  
  
