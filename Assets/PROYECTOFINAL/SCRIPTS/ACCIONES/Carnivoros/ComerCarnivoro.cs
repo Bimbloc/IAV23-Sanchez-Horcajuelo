@@ -31,15 +31,20 @@ public class ComerCarnivoro : BasicAction
         {
             runtimedinfo.GetTargetComida().GetComponent<Comida>().Comer();
             runtimedinfo.SetTargetComida(null);
+            runtimedinfo.hambre /= 3;
+            runtimedinfo.sed++;
+            runtimedinfo.sueño++;
         }
         else if (runtimedinfo.GetTargetPresa()!=null)
-        { 
+        {
             //destruir el otro dinosaurio 
-        
+            runtimedinfo.GetTargetPresa().GetComponent<Hervibore>().SerComido();
+            runtimedinfo.hambre /= 4;
+            runtimedinfo.sed++;
+            runtimedinfo.sueño++;
+
         }
-        runtimedinfo.hambre /= 3;
-        runtimedinfo.sed++;
-        runtimedinfo.sueño++;
+       
         return EActionStatus.Success;
     }
 

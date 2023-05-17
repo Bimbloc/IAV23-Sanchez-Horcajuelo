@@ -22,4 +22,9 @@ public class Hervibore : Character
     {
         
     }
+   public  void SerComido()
+    {
+        Destroy(this.gameObject);
+
+    }
 }
