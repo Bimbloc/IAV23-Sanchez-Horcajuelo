@@ -39,7 +39,8 @@ public class PerseguiPresa : MoveToAction
         }
 
         MoveSystem.Stop();
-
+        runtimedinfo.GetTargetPresa().GetComponent<Hervibore>().SerComido();
+        runtimedinfo.hambre /= 4;
         //Log("Executing");
         yield return Execute();
         // Log("Executed");

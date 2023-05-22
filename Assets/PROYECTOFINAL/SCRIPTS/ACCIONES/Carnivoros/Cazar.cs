@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class Cazar : BasicAction 
 {
-    public float cooldown = 0.3f;
+    public float cooldown = 0.6f;
 
     public DinosaurRunrimeInfo runrimeInfo;
     public AgentRuntimeActionData RuntimeData;
@@ -76,11 +76,15 @@ public class Cazar : BasicAction
         //el coste es la distancia hasta el punto al que vamos  decrece con el hambre y aumenta con el sueño 
         if (runrimeInfo.ClosetsPresa() != null)
         {
-            Cost = Mathf.Abs(Vector3.Magnitude(runrimeInfo.ClosetsComida().position - transform.position)) - runrimeInfo.hambre;
+            Cost = Mathf.Abs(Vector3.Magnitude(runrimeInfo.ClosetsPresa().position - transform.position));
 
         }
         else
-            Cost = Range - runrimeInfo.hambre;
+            Cost = Range;
+        if (Cost < 0)
+        {
+            Cost = 1;
+        }
     }
     public override bool PrePerform()
     {
