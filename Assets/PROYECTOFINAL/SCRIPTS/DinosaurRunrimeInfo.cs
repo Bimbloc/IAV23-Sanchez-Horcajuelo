@@ -13,6 +13,7 @@ public class DinosaurRunrimeInfo : AgentRuntimeActionData
     Transform ClosestComida = null; // el sensor olfato puede percibir más lejos y afectar a la direcciond e merodeo
     Transform ClosestAgua = null;
     Transform ClosestPresa = null;
+    public Transform ClosestPredator = null;
     public GameObject playablearea = null; 
    public  int hambre = 0;
    public  int sueño = 0;

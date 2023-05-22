@@ -17,7 +17,7 @@ public class Olfato : MonoBehaviour
     public Collider[] Objetosencirculo;
     public Transform  AguaCercana;// objetos que no ven pero si huelen, su posicion influencia la direccion en la que merodea el dinosaurio
     public Transform ComidaCercana;
-
+    public Transform DepredadorCercano;
 
     // Start is called before the first frame update
     void Start()
@@ -35,8 +35,10 @@ public class Olfato : MonoBehaviour
         
         int closestcomidadistancia = int.MaxValue;
         int closestaguadistancia = int.MaxValue ;
+        int closestpredatordistancia = int.MaxValue;
         AguaCercana = null;
         ComidaCercana = null;
+        DepredadorCercano = null;
         Objetosencirculo = Physics.OverlapSphere(transform.position, Radio, Layer);
        
         foreach (Collider c in Objetosencirculo)
@@ -61,10 +63,22 @@ public class Olfato : MonoBehaviour
                     AguaCercana = c.transform;
                 }
             }
+            else if (c.gameObject.GetComponent<Carnivore>())
+            {
+               
+                int distanciaactual = (int)Mathf.Abs(Vector3.Magnitude(transform.position - c.transform.position));//la distancia a la comida 
+                if (closestpredatordistancia > distanciaactual)
+                {
+
+                    closestpredatordistancia = distanciaactual;
+                    DepredadorCercano = c.transform;
+                }
+
+            }
         }
         runtimedinfo.SetClosestAgua(AguaCercana);
         runtimedinfo.SetClosestComida(ComidaCercana);
-     
+        runtimedinfo.ClosestPredator = DepredadorCercano;
 
 
     }

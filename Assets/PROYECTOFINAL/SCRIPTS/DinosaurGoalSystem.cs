@@ -20,9 +20,21 @@ public class DinosaurGoalSystem : AgentGoalSystem
         var hambreGoal = AgentRuntimeData.Agent.Goals.FirstOrDefault(x => x.Key == "Nomorirdehambre");
         var sueñoGoal = AgentRuntimeData.Agent.Goals.FirstOrDefault(x => x.Key == "Nomorirdeagotamiento");
         var sedGoal = AgentRuntimeData.Agent.Goals.FirstOrDefault(x => x.Key == "Nomorirdesed");
+        var huirGoal = AgentRuntimeData.Agent.Goals.FirstOrDefault(x => x.Key == "Nomorirdevorado");
         hambreGoal.Priority = runtimedinfo.hambre;
         sueñoGoal.Priority = runtimedinfo.sueño;
         sedGoal.Priority = runtimedinfo.sed;
+        if (huirGoal != null)
+        {
+          
+            if (runtimedinfo.ClosestPredator == null)
+            {
+                huirGoal.Priority = 0;
+            }
+            else
+                huirGoal.Priority = (int)(1000 / Vector3.Magnitude(transform.position - runtimedinfo.ClosestPredator.position)) ;
+            Debug.Log(huirGoal.Priority);
+        }
         AgentRuntimeData.Agent.UpdateGoalOrderCache();
 
     }
