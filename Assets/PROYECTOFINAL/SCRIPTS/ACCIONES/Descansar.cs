@@ -7,6 +7,7 @@ using UnityEngine;
 public class Descansar :BasicAction
 {
     public DinosaurRunrimeInfo runtimedinfo;
+    public ParticleSystem ps;
     public MoveSystem movsys;
     //descansar va  a tener mazo cooldown por que si no está to el rato a base de micro siestas
     public float cooldown = 6f;
@@ -17,7 +18,7 @@ public class Descansar :BasicAction
     // Start is called before the first frame update
     void Start()
     {
-        
+      ps.Pause();
     }
 
     // Update is called once per frame
@@ -30,6 +31,7 @@ public class Descansar :BasicAction
     {
         // By default if the action is cooling down, this returns false.
         count = 0;
+       
         return base.PrePerform();
     }
 
@@ -39,6 +41,7 @@ public class Descansar :BasicAction
         potencia = runtimedinfo.sueño / duracion;
         runtimedinfo.gameObject.GetComponent<Rigidbody>().isKinematic = true;
         movsys.Stop();
+        ps.Play();
         transform.parent.parent.GetComponent<Rigidbody>().velocity = new Vector3(0,0,0);
         //Debug.Log("zzz");
         runtimedinfo.sueño-=potencia;
@@ -47,6 +50,7 @@ public class Descansar :BasicAction
         if (count == duracion)
         {
             runtimedinfo.gameObject.GetComponent<Rigidbody>().isKinematic = false;
+            //ps.Pause();
             return EActionStatus.Success;
         }
         else
@@ -56,6 +60,7 @@ public class Descansar :BasicAction
     public override bool PostPerform()
     {
         // By default, when post perform happens, the Agent is staggered and has a cool down. You can override.
+       
         return base.PostPerform();
     }
 
