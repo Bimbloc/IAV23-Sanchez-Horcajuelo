@@ -6,6 +6,8 @@ namespace SGOAP.Examples
     public class Character : MonoBehaviour, ICharacter
     {
         public int foodtype = 0;
+        public int sueñomod = 1;
+        public int tasacansancion = 8;
         public int HP = 10;
         public int MaxHP = 10;
 

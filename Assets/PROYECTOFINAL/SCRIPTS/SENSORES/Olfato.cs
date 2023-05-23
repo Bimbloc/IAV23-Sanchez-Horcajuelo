@@ -7,6 +7,7 @@ public class Olfato : MonoBehaviour
     public DinosaurRunrimeInfo runtimedinfo;
     [Header("Ajustes")]
     public LayerMask Layer;
+    public int memory= 10;
 
     [Range(0, 360)]
     public float Radio = 20;
@@ -19,6 +20,7 @@ public class Olfato : MonoBehaviour
     public Transform ComidaCercana;
     public Transform DepredadorCercano;
 
+   int  count = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -76,10 +78,20 @@ public class Olfato : MonoBehaviour
 
             }
         }
+        count++;
         runtimedinfo.SetClosestAgua(AguaCercana);
         runtimedinfo.SetClosestComida(ComidaCercana);
-        runtimedinfo.ClosestPredator = DepredadorCercano;
+        if (DepredadorCercano == null) // se va  a olvidar pero solo si han pasado los x ciclos de memoria qeu tiene 
+        {
+            if(count >= memory)
+            runtimedinfo.ClosestPredator = DepredadorCercano;
 
+        }
+        else // lo va  a cambiar por otro qeu es el qeu est amas cerca hora 
+        {
+            runtimedinfo.ClosestPredator = DepredadorCercano;
+            count = 0;
+        }
 
     }
     void OnDrawGizmos()

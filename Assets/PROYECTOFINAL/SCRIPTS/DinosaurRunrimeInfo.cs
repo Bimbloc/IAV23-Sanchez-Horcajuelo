@@ -26,6 +26,7 @@ public class DinosaurRunrimeInfo : AgentRuntimeActionData
     void Start()
     {
         prevposs = transform.position;
+        sueñocooldown = AgentCharacter.tasacansancion;
         InvokeRepeating("GanarHambre", habrecooldown, habrecooldown);
         InvokeRepeating("GanarSueño", sueñocooldown, sueñocooldown);
         InvokeRepeating("GanarSed", sedcooldown, sedcooldown);
@@ -100,7 +101,7 @@ public class DinosaurRunrimeInfo : AgentRuntimeActionData
     {
 
         Vector3 desp =new Vector3( Mathf.Abs( transform.position.x - prevposs.x), Mathf.Abs(transform.position.y - prevposs.y), Mathf.Abs(transform.position.z - prevposs.z));
-        sueño+=( int ) desp.magnitude/2;
+        sueño+= (( int ) desp.magnitude/2) / AgentCharacter.sueñomod;
         prevposs = transform.position;
     }
     void GanarSed()

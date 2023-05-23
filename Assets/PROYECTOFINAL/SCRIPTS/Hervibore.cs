@@ -14,7 +14,8 @@ public class Hervibore : Character
     
     void Start()
     {
-        foodtype = 0;  
+        foodtype = 0;
+        sueñomod = 2;
     }
 
     // Update is called once per frame

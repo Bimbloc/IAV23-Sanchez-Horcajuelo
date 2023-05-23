@@ -32,7 +32,7 @@ public class DinosaurGoalSystem : AgentGoalSystem
                 huirGoal.Priority = 0;
             }
             else
-                huirGoal.Priority = (int)(1000 / Vector3.Magnitude(transform.position - runtimedinfo.ClosestPredator.position)) ;
+                huirGoal.Priority = (int)(10000 / Vector3.Magnitude(transform.position - runtimedinfo.ClosestPredator.position)) ;
           //  Debug.Log(huirGoal.Priority);
         }
         AgentRuntimeData.Agent.UpdateGoalOrderCache();

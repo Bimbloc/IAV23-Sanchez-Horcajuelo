@@ -500,6 +500,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   foodtype: 0
+  "sue\xF1omod": 1
+  tasacansancion: 8
   HP: 10
   MaxHP: 10
 --- !u!1 &877447894775379916
@@ -830,7 +832,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 877447895635336736}
   serializedVersion: 8
-  lengthInSec: 3
+  lengthInSec: 2
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0

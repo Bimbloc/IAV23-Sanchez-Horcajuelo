@@ -108,7 +108,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8452281012695847436}
   serializedVersion: 8
-  lengthInSec: 3
+  lengthInSec: 2
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -5239,7 +5239,7 @@ MonoBehaviour:
   Layer:
     serializedVersion: 2
     m_Bits: 2147483647
-  Radio: 9
+  Radio: 11
   Rango: 20
   Altura: 100
   Objetosencirculo: []
@@ -5944,6 +5944,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   foodtype: 0
+  "sue\xF1omod": 1
+  tasacansancion: 8
   HP: 10
   MaxHP: 10
 --- !u!114 &8452281014630966819

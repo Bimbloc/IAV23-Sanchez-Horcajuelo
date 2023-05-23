@@ -10,6 +10,8 @@ public class Carnivore : Character
     void Start()
     {
         foodtype = 1;
+        sueñomod = 1;
+        tasacansancion = 6;
     }
 
     // Update is called once per frame
