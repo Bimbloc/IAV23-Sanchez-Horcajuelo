@@ -26,21 +26,24 @@ public class PerseguiPresa : MoveToAction
     public override IEnumerator PerformRoutine()
     {
         MoveSystem.SetMoveData(MoveData);
-        MoveSystem.SetDestination(Destination.position);
-        Log($"Set Destination: {Destination.position}");
-
-        while (!MoveSystem.ReachedDestination())
+        if (Destination != null)
         {
-            if (Destination == null)
-                break;
-
             MoveSystem.SetDestination(Destination.position);
-            yield return null;
-        }
+            Log($"Set Destination: {Destination.position}");
 
-        MoveSystem.Stop();
-        runtimedinfo.GetTargetPresa().GetComponent<Hervibore>().SerComido();
-        runtimedinfo.hambre /= 4;
+            while (!MoveSystem.ReachedDestination())
+            {
+                if (Destination == null)
+                    break;
+
+                MoveSystem.SetDestination(Destination.position);
+                yield return null;
+            }
+
+            MoveSystem.Stop();
+            runtimedinfo.GetTargetPresa().GetComponent<Hervibore>().SerComido();
+            runtimedinfo.hambre /= 4;
+        }
         //Log("Executing");
         yield return Execute();
         // Log("Executed");

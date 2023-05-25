@@ -12,6 +12,7 @@ public class reloj : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        tiempo = 0;
         InvokeRepeating("AumentaTiempo", 0, 1);
     }
 
@@ -25,6 +26,12 @@ public class reloj : MonoBehaviour
 
         tiempo++;
         texto.GetComponent<TextMeshProUGUI>().text = tiempo / 60 + ":" + (tiempo % 60);
+    }
+
+    public int GetTime()
+    {
+
+        return tiempo;
     }
 
 }
