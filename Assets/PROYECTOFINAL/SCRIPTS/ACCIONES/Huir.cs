@@ -13,7 +13,7 @@ public class Huir : MoveToAction
     }
     public override Transform GetDestination()
     {
-        Debug.Log(runtimedinfo.ClosestPredator);
+        //Debug.Log(runtimedinfo.ClosestPredator);
         if (runtimedinfo.ClosestPredator != null)
         {
             Vector3 pos = transform.position - runtimedinfo.ClosestPredator.position;
