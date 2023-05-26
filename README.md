@@ -134,6 +134,8 @@ if object != null
  **Prueba D** : La simulación avanza y agentes empiezan a estar cansados , los dinosaurios herbivoros que estén lejos de una amenaza podrán dormir pero 
  aquellos que estén derca de carnivoros hambrientos deberán huir hasta dejarlos atrás.Los herviboros cuentan con una  corta memoria de unas  decimas de  segundo parar recordar la amenaza qeu les persigue asi qeu aun qeu dejen de percivirlos  seguirán huyendo un ratito más.
  
+ [Video Con La Bateria de Pruebas](https://youtu.be/UU_z0fX-LNw)
+ 
  # Producción 
  
  Las tareas se han realizado y el esfuerzo ha sido repartido entre los autores.
@@ -148,11 +150,12 @@ if object != null
 |   ✔   | Completar la implementacion de herviboros  |22-05| Rocío            |
 |   ✔   | Completar la implementacion de carnivoros  | 22-05| Rocío            |
 |  ✔   | Mejorar la estetica de la práctica  | 25-05| Rocío            |
-|   X   |Grabar y editar bateria de pruebas  | 25-05| Rocío            |
+|   ✔   |Grabar y editar bateria de pruebas  | 25-05| Rocío            |
 
 
 # Referencias 
 - Plug In de GOAPS en unty : [plug in de SGOAP](https://assetstore.unity.com/packages/tools/ai/s-goap-ai-solution-167167)
+- Los Assets empleados son de  elaboración propia.
 
 
 
