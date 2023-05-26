@@ -127,12 +127,12 @@ if object != null
  
  **Prueba A** : Al iniciar el juego los dinosaurios tienen todos los requisitos de supervivencia al máximo pero a medida que se mueven se cansan y a medida que pasa el tiempo tienen más hambre.Nos centraremos en los herbivoros y observaremos como merodean hasta encontrar una planta que poder comer.
  
- **Prueba B** : Después de dejar la simulación  trabajando un rato los dinosaurios carnivoros tendrán hambre asi que intentarán cazar a los herviboros. 
+ **Prueba B** : Después de dejar la simulación  trabajando un rato los dinosaurios carnivoros tendrán hambre asi que intentarán cazar a los herviboros.Nos centraremos en los carnivoros y en sus distintos mecanismos para obtener comida que es lo que les diferencia de los herviboros. 
  
- **Prueba C** : En esta simulación habrá poca comida y veremos como aquellos agentes que no logren obtenerla se desvanecerán
+ **Prueba C** : En esta simulación los agentes cuentan con 2 sensores para percivir el entorno que les rodea, se  ejecuta el juego en modo de  depuracion para observar el correcto funcionamiento de estos sensores. 
  
  **Prueba D** : La simulación avanza y agentes empiezan a estar cansados , los dinosaurios herbivoros que estén lejos de una amenaza podrán dormir pero 
- aquellos que estén derca de carnivoros hambrientos deberán huir hasta dejarlos atrás o desvanecerse por el agoamiento.
+ aquellos que estén derca de carnivoros hambrientos deberán huir hasta dejarlos atrás.Los herviboros cuentan con una  corta memoria de unas  decimas de  segundo parar recordar la amenaza qeu les persigue asi qeu aun qeu dejen de percivirlos  seguirán huyendo un ratito más.
  
  # Producción 
  
@@ -145,9 +145,10 @@ if object != null
 |   ✔    | Crear agente base con tareas comunes   | 13-05 | Rocío            |
 |   ✔    | Implementar interacciones con el ratón   | 15-05 | Rocío            |
 |   ✔    |  Terminar la documentación   | 17-05 | Rocío            |
-|   X   | Completar la implementacion de herviboros  | na| Rocío            |
-|   X   | Completar la implementacion de carnivoros  | na| Rocío            |
-|   X   | Mejorar la estetica de la práctica  | na| Rocío            |
+|   ✔   | Completar la implementacion de herviboros  |22-05| Rocío            |
+|   ✔   | Completar la implementacion de carnivoros  | 22-05| Rocío            |
+|  ✔   | Mejorar la estetica de la práctica  | 25-05| Rocío            |
+|   X   |Grabar y editar bateria de pruebas  | 25-05| Rocío            |
 
 
 # Referencias 
