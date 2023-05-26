@@ -21,7 +21,9 @@ public class PerseguiPresa : MoveToAction
     }
     public override Transform GetDestination()
     {
-        return runtimedinfo.GetTargetPresa().transform;
+        if (runtimedinfo.GetTargetPresa() != null)
+            return runtimedinfo.GetTargetPresa().transform;
+        else return null;
     }
     public override IEnumerator PerformRoutine()
     {

@@ -28,4 +28,9 @@ public class scenechanger : MonoBehaviour
         SceneManager.LoadScene("menu");
 
     }
+    public void ExitGame()
+    {
+
+        Application.Quit();
+    }
 }

@@ -134,6 +134,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: protodinosaur Carnivoro (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 877447894743045188, guid: 3e6f41465e9fa1f498451aa9189ce316, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 877447894743045190, guid: 3e6f41465e9fa1f498451aa9189ce316, type: 3}
       propertyPath: playablearea
       value: 
@@ -849,6 +853,10 @@ PrefabInstance:
     - target: {fileID: 8452281014630966820, guid: d914742dca1d1394caf4db9f7d93c104, type: 3}
       propertyPath: m_Name
       value: protodinosaur Herbivoro (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8452281014630966820, guid: d914742dca1d1394caf4db9f7d93c104, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8452281014630966842, guid: d914742dca1d1394caf4db9f7d93c104, type: 3}
       propertyPath: m_RootOrder
@@ -2138,7 +2146,7 @@ Camera:
   m_GameObject: {fileID: 616625768}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 2
+  m_ClearFlags: 1
   m_BackGroundColor: {r: 0.41442683, g: 0.45578992, b: 0.6320754, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -2862,6 +2870,10 @@ PrefabInstance:
     - target: {fileID: 8452281014630966820, guid: d914742dca1d1394caf4db9f7d93c104, type: 3}
       propertyPath: m_Name
       value: protodinosaur Herbivoro (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8452281014630966820, guid: d914742dca1d1394caf4db9f7d93c104, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8452281014630966842, guid: d914742dca1d1394caf4db9f7d93c104, type: 3}
       propertyPath: m_RootOrder
@@ -3754,6 +3766,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: protodinosaur Herbivoro (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8452281014630966820, guid: d914742dca1d1394caf4db9f7d93c104, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8452281014630966842, guid: d914742dca1d1394caf4db9f7d93c104, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -4606,6 +4622,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: protodinosaur Herbivoro (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 8452281014630966820, guid: d914742dca1d1394caf4db9f7d93c104, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8452281014630966842, guid: d914742dca1d1394caf4db9f7d93c104, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -4919,6 +4939,10 @@ PrefabInstance:
     - target: {fileID: 877447894743045188, guid: 3e6f41465e9fa1f498451aa9189ce316, type: 3}
       propertyPath: m_Name
       value: protodinosaur Carnivoro (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 877447894743045188, guid: 3e6f41465e9fa1f498451aa9189ce316, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 877447894743045190, guid: 3e6f41465e9fa1f498451aa9189ce316, type: 3}
       propertyPath: playablearea
@@ -5548,6 +5572,10 @@ PrefabInstance:
     - target: {fileID: 8452281014630966820, guid: d914742dca1d1394caf4db9f7d93c104, type: 3}
       propertyPath: m_Name
       value: protodinosaur Herbivoro (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8452281014630966820, guid: d914742dca1d1394caf4db9f7d93c104, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8452281014630966842, guid: d914742dca1d1394caf4db9f7d93c104, type: 3}
       propertyPath: m_RootOrder
@@ -6402,6 +6430,10 @@ PrefabInstance:
     - target: {fileID: 8452281014630966820, guid: d914742dca1d1394caf4db9f7d93c104, type: 3}
       propertyPath: m_Name
       value: protodinosaur Herbivoro (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8452281014630966820, guid: d914742dca1d1394caf4db9f7d93c104, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8452281014630966842, guid: d914742dca1d1394caf4db9f7d93c104, type: 3}
       propertyPath: m_RootOrder
@@ -8017,6 +8049,38 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8452281012694981009, guid: d914742dca1d1394caf4db9f7d93c104, type: 3}
+      propertyPath: Name
+      value: Beber
+      objectReference: {fileID: 0}
+    - target: {fileID: 8452281012911504408, guid: d914742dca1d1394caf4db9f7d93c104, type: 3}
+      propertyPath: Name
+      value: BuscarAgua
+      objectReference: {fileID: 0}
+    - target: {fileID: 8452281013058224290, guid: d914742dca1d1394caf4db9f7d93c104, type: 3}
+      propertyPath: Name
+      value: Descansar
+      objectReference: {fileID: 0}
+    - target: {fileID: 8452281013653056776, guid: d914742dca1d1394caf4db9f7d93c104, type: 3}
+      propertyPath: Name
+      value: PersigueAgua
+      objectReference: {fileID: 0}
+    - target: {fileID: 8452281014232871230, guid: d914742dca1d1394caf4db9f7d93c104, type: 3}
+      propertyPath: Name
+      value: PersigueComida
+      objectReference: {fileID: 0}
+    - target: {fileID: 8452281014232871231, guid: d914742dca1d1394caf4db9f7d93c104, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8452281014232871231, guid: d914742dca1d1394caf4db9f7d93c104, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 8452281014349307736, guid: d914742dca1d1394caf4db9f7d93c104, type: 3}
+      propertyPath: Name
+      value: Comer
+      objectReference: {fileID: 0}
     - target: {fileID: 8452281014630966819, guid: d914742dca1d1394caf4db9f7d93c104, type: 3}
       propertyPath: playablearea
       value: 

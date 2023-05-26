@@ -6,12 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/PROYECTOFINAL/menu.unity
+    guid: dc4fae8bb81632d44b656a61a7c5f464
+  - enabled: 1
     path: Assets/PROYECTOFINAL/escena.unity
     guid: e1e371cfdb5365c48b15403fe8c470ad
   - enabled: 1
     path: Assets/PROYECTOFINAL/ending.unity
     guid: 77b25f176d6f8a545bfaa5fb7c0243f2
-  - enabled: 1
-    path: Assets/PROYECTOFINAL/menu.unity
-    guid: dc4fae8bb81632d44b656a61a7c5f464
   m_configObjects: {}
