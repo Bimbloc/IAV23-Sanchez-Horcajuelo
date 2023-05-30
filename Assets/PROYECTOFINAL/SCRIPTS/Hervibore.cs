@@ -1,3 +1,5 @@
+//Ficero elaborado para la asignatura Inteligencia Artificial en Videojuegos 
+//por Rocio Sánchez
 using SGOAP.Examples;
 using System.Collections;
 using System.Collections.Generic;

@@ -1,9 +1,15 @@
+//Ficero elaborado para la asignatura Inteligencia Artificial en Videojuegos 
+//por Rocio Sánchez
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class OlfatoCarnivoro : MonoBehaviour
 {
+    /// <summary>
+    /// Cada ciclo de fisica se comprueba en un area circular 
+    /// alrededor del agente la presencia de agua comida o presas.
+    /// </summary>
     public DinosaurRunrimeInfo runtimedinfo;
     [Header("Ajustes")]
     public LayerMask Layer;

@@ -1,3 +1,5 @@
+//Ficero elaborado para la asignatura Inteligencia Artificial en Videojuegos 
+//por Rocio Sánchez
 using SGOAP.Examples;
 using System.Collections;
 using System.Collections.Generic;
@@ -5,7 +7,7 @@ using UnityEngine;
 
 public class DinosaurRunrimeInfo : AgentRuntimeActionData
 {      // basicamente una blackboard
-    // Start is called before the first frame update
+   
     //Toda la informacion del estado del dinosaurio si tiene hambe sed si está cazando , huyendo...
     GameObject comida = null; //El sensor de vista aportará valor a esta variable
     GameObject agua = null;

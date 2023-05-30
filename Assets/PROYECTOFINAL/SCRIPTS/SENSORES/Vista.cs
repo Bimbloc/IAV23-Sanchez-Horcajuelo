@@ -1,10 +1,15 @@
+//Ficero elaborado para la asignatura Inteligencia Artificial en Videojuegos 
+//por Rocio Sánchez
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Vista : MonoBehaviour
 {
-    // Start is called before the first frame update
+    /// <summary>
+    /// Un area en frent del agente que
+    /// detecta la comida  y el agua que la traspasa
+    /// </summary>
     public DinosaurRunrimeInfo runrimeInfo;
     void Start()
     {

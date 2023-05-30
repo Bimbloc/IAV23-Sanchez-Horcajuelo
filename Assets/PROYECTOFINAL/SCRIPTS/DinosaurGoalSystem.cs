@@ -1,3 +1,5 @@
+//Ficero elaborado para la asignatura Inteligencia Artificial en Videojuegos 
+//por Rocio Sánchez
 using SGOAP.Examples;
 using System.Collections;
 using System.Collections.Generic;
@@ -7,7 +9,9 @@ using UnityEngine;
 public class DinosaurGoalSystem : AgentGoalSystem
 {
     public DinosaurRunrimeInfo runtimedinfo;
-    // Start is called before the first frame update
+    /// <summary>
+    /// Gestiona y actualiza las prioridades de los objetivos del agente.
+    /// </summary>
     void Start()
     {
         
