@@ -1,3 +1,5 @@
+//Ficero elaborado para la asignatura Inteligencia Artificial en Videojuegos 
+//por Rocio Sánchez
 using SGoap;
 using System.Collections;
 using System.Collections.Generic;
@@ -5,8 +7,12 @@ using UnityEngine;
 
 public class Beber : BasicAction
 {
+    /// <summary>
+    /// El agente ha llegado a una fuente de agua.
+    /// La utiliza y actualiza sus constantes vitales.
+    /// </summary>
     public DinosaurRunrimeInfo runtimedinfo;
-    // Start is called before the first frame update
+    
     void Start()
     {
         

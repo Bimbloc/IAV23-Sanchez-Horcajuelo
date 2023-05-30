@@ -1,3 +1,5 @@
+//Ficero elaborado para la asignatura Inteligencia Artificial en Videojuegos 
+//por Rocio Sánchez
 using SGoap;
 using SGOAP.Examples;
 using System.Collections;
@@ -7,8 +9,10 @@ using UnityEngine;
 public class PersigueComida : MoveToAction
 {
     public DinosaurRunrimeInfo runtimedinfo;
-
-    // Start is called before the first frame update
+    /// <summary>
+    /// El agente ha recibido  una posicion concreta de los sentidos
+    /// Se aproxima a ella para poder consumir la comida.
+    /// </summary>
     void Start()
     {
         

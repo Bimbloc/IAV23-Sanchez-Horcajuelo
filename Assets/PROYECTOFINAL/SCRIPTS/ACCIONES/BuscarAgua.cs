@@ -1,3 +1,5 @@
+//Ficero elaborado para la asignatura Inteligencia Artificial en Videojuegos 
+//por Rocio Sánchez
 using SGoap;
 using SGOAP.Examples;
 using System.Collections;
@@ -6,6 +8,9 @@ using UnityEngine;
 
 public class BuscarAgua : BasicAction
 {
+    //Obtenemos un punto aleatorio para que el agente merodee hasta el.
+    //comporbamos que el punto esta dentro del area de juego.
+    //si el oolfato nos proporciona una direccion , interpolamos.
     public DinosaurRunrimeInfo runrimeInfo;
     public AgentRuntimeActionData RuntimeData;
     public MoveData MoveData;

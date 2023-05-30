@@ -1,3 +1,5 @@
+//Ficero elaborado para la asignatura Inteligencia Artificial en Videojuegos 
+//por Rocio Sánchez
 using SGoap;
 using System.Collections;
 using System.Collections.Generic;
@@ -6,7 +8,7 @@ using UnityEngine;
 public class Comer : BasicAction
 {
     public DinosaurRunrimeInfo runtimedinfo;
-    // Start is called before the first frame update
+    //Una vez el agente llega a la comida la procesa y actualiza sus constantes vitales.
     void Start()
     {
         

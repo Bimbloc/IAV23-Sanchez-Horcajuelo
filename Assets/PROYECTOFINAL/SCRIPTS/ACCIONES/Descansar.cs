@@ -1,11 +1,22 @@
+//Ficero elaborado para la asignatura Inteligencia Artificial en Videojuegos 
+//por Rocio Sánchez
 using SGoap;
 using SGOAP.Examples;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
+
+
 public class Descansar :BasicAction
 {
+    /// <summary>
+    /// Detiene al agente .
+    /// eL agente recupera energia y actualiza sus constantes vitales.
+    /// </summary>
+    ///< value name = "duracion" > numero de ciclos que se duerme</value>
     public DinosaurRunrimeInfo runtimedinfo;
     public ParticleSystem ps;
     public MoveSystem movsys;
@@ -35,6 +46,7 @@ public class Descansar :BasicAction
         return base.PrePerform();
     }
 
+   
     public override EActionStatus Perform()
     {
         //llegados a este punto el target solo puede ser comida 
@@ -59,6 +71,7 @@ public class Descansar :BasicAction
 
     public override bool PostPerform()
     {
+       
         // By default, when post perform happens, the Agent is staggered and has a cool down. You can override.
        
         return base.PostPerform();
