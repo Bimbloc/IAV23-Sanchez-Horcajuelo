@@ -15,6 +15,9 @@ public class Cazar : BasicAction
     public float Range = 5;
     Vector3 newPosition;
     public override float StaggerTime => cooldown;
+
+    [SerializeField]
+    AudioSource rugido; 
     private Vector3 _startPosition;
     private Vector3 _destination;
 
@@ -31,6 +34,7 @@ public class Cazar : BasicAction
     }
     void Start()
     {
+       
         /*newPosition = (_startPosition + transform.forward) + Random.insideUnitSphere * Range;
         while (!Inplayablearea(newPosition))
         { newPosition = _startPosition + Random.insideUnitSphere * Range; }*/
@@ -88,6 +92,9 @@ public class Cazar : BasicAction
     }
     public override bool PrePerform()
     {
+        Debug.Log("roar");
+        if(!rugido.isPlaying)
+        rugido.Play();
         // By default, when post perform happens, the Agent is staggered and has a cool down. You can override.
         if (MoveSystem.ReachedDestination())
         {
