@@ -1,3 +1,5 @@
+//Ficero elaborado para la asignatura Inteligencia Artificial en Videojuegos 
+//por Rocio Sánchez
 using SGoap;
 using SGOAP.Examples;
 using System.Collections;
@@ -6,6 +8,10 @@ using UnityEngine;
 
 public class Cazar : BasicAction 
 {
+    /// <summary>
+    /// El agente busca una presa en una direccion aleatoria
+    /// Si el olfato nos aporta informacion , interpolamos.
+    /// </summary>
     public float cooldown = 0.6f;
 
     public DinosaurRunrimeInfo runrimeInfo;

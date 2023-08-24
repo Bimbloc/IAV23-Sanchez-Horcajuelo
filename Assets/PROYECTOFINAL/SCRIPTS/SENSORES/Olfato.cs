@@ -1,9 +1,16 @@
+//Ficero elaborado para la asignatura Inteligencia Artificial en Videojuegos 
+//por Rocio Sánchez
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Olfato : MonoBehaviour
-{
+{   
+    /// <summary>
+    /// Un area circular alrededor del agente
+    /// que detecta en cada ciclo de fisica el agua o la comida
+    /// que contiene
+    /// </summary>
     public DinosaurRunrimeInfo runtimedinfo;
     [Header("Ajustes")]
     public LayerMask Layer;

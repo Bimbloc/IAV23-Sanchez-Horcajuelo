@@ -1,3 +1,5 @@
+//Ficero elaborado para la asignatura Inteligencia Artificial en Videojuegos 
+//por Rocio Sánchez
 using SGoap;
 using SGOAP.Examples;
 using System.Collections;
@@ -6,7 +8,7 @@ using UnityEngine;
 
 public class BuscaComida : BasicAction
 {
-    // Start is called before the first frame update
+   // Generamos un punto en un area circular alrededor del agente para merodee hacia el.
     public float cooldown = 0.3f;
  
     public  DinosaurRunrimeInfo runrimeInfo;
@@ -56,7 +58,7 @@ public class BuscaComida : BasicAction
         _startPosition = runrimeInfo.Agent.transform.position;
        // _destination = GetSeekPosition();
         //Debug.Log("BuscaComida");
-        if (runrimeInfo.GetTargetComida() == null)
+        if (runrimeInfo.GetTargetComida() == null) //si todavia no hemos necontrado comida seguimos merodeando.
         {
             //Debug.Log("estoybuscandocomida" + runrimeInfo.GetTarget());
             MoveSystem.SetMoveData(MoveData);
@@ -109,10 +111,10 @@ public class BuscaComida : BasicAction
     {
         _startPosition = runrimeInfo.Agent.transform.position;
         newPosition =( _startPosition  + transform.forward ) + Random.insideUnitSphere * Range;
-        while(!Inplayablearea(newPosition + transform.forward))
+        while(!Inplayablearea(newPosition + transform.forward)) //tenemos que asegurarnos de que el punto este dentro del area del plano donde  se desarrola el juego.
         { newPosition = _startPosition + Random.insideUnitSphere * Range; }
        
-        if(runrimeInfo.ClosetsComida()!= null)
+        if(runrimeInfo.ClosetsComida()!= null) //si el olfato nos ha  dado una direccion , interpolamos.
         {
             //Debug.Log("Comida Cercana ");
             // newPosition +=   (runrimeInfo.ClosetsComida().position - newPosition)/2;     

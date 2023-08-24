@@ -1,3 +1,5 @@
+//Ficero elaborado para la asignatura Inteligencia Artificial en Videojuegos 
+//por Rocio Sánchez
 using SGOAP.Examples;
 using System.Collections;
 using System.Collections.Generic;
@@ -7,7 +9,10 @@ public class PersigueAgua : MoveToAction
 {
     public DinosaurRunrimeInfo runtimedinfo;
 
-    // Start is called before the first frame update
+   /// <summary>
+   /// El agente ha recibido  una posicion concreta de los sentidos
+   /// Se aproxima a ella para poder consumir agua.
+   /// </summary>
     void Start()
     {
 

@@ -1,3 +1,5 @@
+//Ficero elaborado para la asignatura Inteligencia Artificial en Videojuegos 
+//por Rocio Sánchez
 using SGOAP.Examples;
 using System.Collections;
 using System.Collections.Generic;
@@ -5,12 +7,19 @@ using UnityEngine;
 
 public class Huir : MoveToAction
 {
+    /// <summary>
+    /// Si los sentidos han detectado un depredador, el agente huye.	
+    /// </summary>
+    /// <value Property <c> g </c>  es la posicion a la que huye </value>
+ 
     public DinosaurRunrimeInfo runtimedinfo;
     GameObject g;
     private void Start()
     {
        g = new GameObject();
     }
+
+   
     public override Transform GetDestination()
     {
         //Debug.Log(runtimedinfo.ClosestPredator);

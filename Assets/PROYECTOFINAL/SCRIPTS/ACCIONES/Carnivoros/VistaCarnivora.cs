@@ -1,9 +1,15 @@
+//Ficero elaborado para la asignatura Inteligencia Artificial en Videojuegos 
+//por Rocio Sánchez
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class VistaCarnivora : MonoBehaviour
 {
+    /// <summary>
+    /// Un area en frente del agnete detecta el agua la comida 
+    /// y las presas que chocan con ella.
+    /// </summary>
     public DinosaurRunrimeInfo runrimeInfo;
     void Start()
     {

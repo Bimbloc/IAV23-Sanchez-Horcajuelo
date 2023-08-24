@@ -1,3 +1,5 @@
+//Ficero elaborado para la asignatura Inteligencia Artificial en Videojuegos 
+//por Rocio Sánchez
 using SGoap;
 using System.Collections;
 using System.Collections.Generic;
@@ -5,7 +7,7 @@ using UnityEngine;
 
 public class DeboraPresa : BasicAction
 {
-
+    //Este script se uso en un portotipo del poryecto pero su funcion se dlego a otro archivo
     public DinosaurRunrimeInfo runtimedinfo;
     // Start is called before the first frame update
     void Start()
